@@ -30,16 +30,15 @@
     <div class="nav-links">
       <a href="../products/index.html" data-nav="products">Products</a>
       <a href="../solutions/index.html" data-nav="solutions">Solutions</a>
-      <a href="index.html" data-nav="support">Support</a>
-      <a href="../company/about.html" data-nav="company">Company</a>
-      <a href="../contact/index.html" data-nav="contact">Contact</a>
+      <a href="../company/index.html" data-nav="company">Company</a>
+      <a href="../support/resources.html" data-nav="resources">Resources</a>
     </div>
     <form class="nav-search" role="search" data-nav-search action="../search.html" method="get">
       <label class="visually-hidden">Search</label>
       <input type="search" name="q" placeholder="Search" aria-label="Search" />
       <button type="submit">Search</button>
     </form>
-    <a class="nav-cta" href="download-center.html">Download Center</a>
+    <a class="nav-cta" href="../contact/index.html">Contact us</a>
   </nav>
   <main class="main">
 
@@ -57,8 +56,20 @@
             <div class="field"><label>Password</label><input type="password" placeholder="••••••••" /></div>
           </div>
           <div class="btn-row"><button type="submit" class="btn btn-fill">Sign in (wireframe)</button></div>
-          <div class="form-note">Thank you — we’ll be in touch. This stub does not authenticate.</div>
+          <div class="form-note" data-portal-thanks hidden>Thank you — we’ll be in touch. This stub does not authenticate.</div>
+          <p class="form-note">Wireframe login — submit to see a confirmation. No real account is created.</p>
         </form>
+        <script>
+          (function () {
+            var form = document.querySelector("form[data-wireframe-form]");
+            if (!form) return;
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
+              var note = form.querySelector("[data-portal-thanks]");
+              if (note) note.hidden = false;
+            });
+          })();
+        </script>
         <p class="mt-24 text-sm"><a class="arrow-link" href="find-a-dealer.html">Back to find a dealer →</a> &nbsp; <a class="arrow-link" href="../solutions/partners.html">Partners →</a></p>
       </section>
     </div>
