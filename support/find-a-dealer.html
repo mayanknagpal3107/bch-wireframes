@@ -15,8 +15,6 @@
       <button type="button" class="lang-opt" data-view="hi">हिंदी</button>
       <span class="lang-dot" aria-hidden="true">·</span>
       <button type="button" class="lang-opt is-active" data-view="en" aria-pressed="true">English</button>
-      <span class="lang-dot" aria-hidden="true">·</span>
-      <button type="button" class="lang-opt" data-view="de">Deutsch</button>
     </nav>
     <div class="util-right">
       <a href="../products/selector.html">Product selector</a>
@@ -82,8 +80,19 @@
               <select id="ns-state" name="state"><option value="">Select state</option></select></div>
             <div class="field"><label for="ns-city">City</label>
               <select id="ns-city" name="city" disabled><option value="">Select city</option></select></div>
+            <div class="field full"><label for="ns-family">Product family (optional)</label>
+              <select id="ns-family" name="family">
+                <option value="">Any / not sure</option>
+                <option>Motor starters / agri</option>
+                <option>Motor control</option>
+                <option>Power control</option>
+                <option>Enclosures</option>
+                <option>Panels</option>
+              </select></div>
           </div>
-          <div class="btn-row"><button type="submit" class="btn btn-fill">Find support</button></div>
+          <p class="form-note">Wireframe — “who stocks agri starters near me” is a locator dimension for production; here it routes the sales office ask.</p>
+          <div class="btn-row"><button type="submit" class="btn btn-fill">Find support</button>
+            <a class="btn" href="https://wa.me/9118001039262" target="_blank" rel="noopener">WhatsApp</a></div>
           <div class="form-note" hidden></div>
         </form>
         <div id="ns-results" class="ns-results" hidden></div>
@@ -92,81 +101,18 @@
 
 
       <section class="section section-border">
-        <span class="section-label">Nearest sales offices</span>
-        <h2 class="mb-24">From the live sales-offices list</h2>
-        <div data-acc-group>
-        <div class="acc-item is-open"><button type="button" class="acc-btn" data-acc aria-expanded="true">Offices (email and phone)</button><div class="acc-panel"><div class="wf-acc-body">
-        <ul class="list-clean">
-          <li><strong>Ahmedabad</strong><span><a href="mailto:ahmedabad@bchindia.com">ahmedabad@bchindia.com</a> · 079 46047740, 9909909249</span></li>
-          <li><strong>Bangalore</strong><span><a href="mailto:bangalore@bchindia.com">bangalore@bchindia.com</a> · 9845594079, 08022236759</span></li>
-          <li><strong>Bhubaneswar</strong><span><a href="mailto:bhubaneswar@bchindia.com">bhubaneswar@bchindia.com</a> · 0674-2380988</span></li>
-          <li><strong>Chandigarh</strong><span><a href="mailto:chandigarh@bchindia.com">chandigarh@bchindia.com</a> · 0172-5078957 / 5049905</span></li>
-          <li><strong>Chennai</strong><span><a href="mailto:chennai@bchindia.com">chennai@bchindia.com</a> · 044-24337046 / 24337047</span></li>
-          <li><strong>Coimbatore</strong><span><a href="mailto:coimbatore@bchindia.com">coimbatore@bchindia.com</a> · 0422-2305311</span></li>
-          <li><strong>Dehradun</strong><span><a href="mailto:dehradun@bchindia.com">dehradun@bchindia.com</a></span></li>
-          <li><strong>Faridabad</strong><span><a href="mailto:faridabad@bchindia.com">faridabad@bchindia.com</a> · 0129-2304016</span></li>
-        </ul>
-          </div>
-        </div></div>
+        <span class="section-label">Full office list</span>
+        <h2 class="mb-16">Sales offices reference</h2>
+        <p class="lead mb-16">Addresses and phones live on the sales-offices table — not duplicated here.</p>
+        <div class="btn-row">
+          <a class="btn" href="sales-offices.html">All sales offices →</a>
+          <a class="btn" href="https://wa.me/9118001039262" target="_blank" rel="noopener">WhatsApp helpline →</a>
+          <a class="btn" href="tel:18001039262">Call 1800 103 9262</a>
         </div>
-        <p class="mt-16"><a class="btn" href="sales-offices.html">All 24 sales offices →</a></p>
       </section>
 
       
-      <section class="dealer-meets section-border" id="dealer-meets">
-        <span class="section-label">Dealer meets</span>
-        <h2>Previous dealer meets</h2>
-        <p class="lead">Films already on the official BCH ELECTRIC LIMITED YouTube channel. No third-party clips.</p>
-        <div class="meet-grid">
-          <article class="meet-card">
-            <div class="yt-frame">
-              <iframe src="https://www.youtube-nocookie.com/embed/6rl-K6rCRzs?rel=0" title="BCH Dealer Meet 2023 Goa" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <div class="body">
-              <span class="section-label">2023 · Goa</span>
-              <h3>Dealer Meet 2023, Goa</h3>
-              <p>BCH ELECTRIC LIMITED</p>
-              <a class="arrow-link" href="https://www.youtube.com/watch?v=6rl-K6rCRzs">Watch on YouTube →</a>
-            </div>
-          </article>
-          <article class="meet-card">
-            <div class="yt-frame">
-              <iframe src="https://www.youtube-nocookie.com/embed/fjp_XfusNlk?rel=0" title="BCH Dealer Meet 2023 South West Region" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <div class="body">
-              <span class="section-label">2023 · South West</span>
-              <h3>Dealer Meet 2023, South West Region</h3>
-              <p>BCH ELECTRIC LIMITED</p>
-              <a class="arrow-link" href="https://www.youtube.com/watch?v=fjp_XfusNlk">Watch on YouTube →</a>
-            </div>
-          </article>
-          <article class="meet-card">
-            <div class="yt-frame">
-              <iframe src="https://www.youtube-nocookie.com/embed/YPlC6-wamNA?rel=0" title="BCH Dealer's Conference 2024 Dubai" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <div class="body">
-              <span class="section-label">2024 · Dubai</span>
-              <h3>Dealer’s Conference 2024, Dubai</h3>
-              <p>BCH ELECTRIC LIMITED</p>
-              <a class="arrow-link" href="https://www.youtube.com/watch?v=YPlC6-wamNA">Watch on YouTube →</a>
-            </div>
-          </article>
-          <article class="meet-card">
-            <div class="yt-frame">
-              <iframe src="https://www.youtube-nocookie.com/embed/InSW-tgK0SQ?rel=0" title="Message from Chairman and Managing Director, Dealers Meet 2018 Goa" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <div class="body">
-              <span class="section-label">2018 · Goa</span>
-              <h3>CMD message, Dealers Meet 2018</h3>
-              <p>Mr. O.P. Bhartia. Also on the news archive.</p>
-              <a class="arrow-link" href="https://bchindia.com/news-and-events/speech-delivered-by-mr-o-p-bhartia-chairman-and-managing-director-bch-electric-limited-at-dealers-meet-held-on-22-25-oct-2018-in-goa/">News →</a>
-              &nbsp;
-              <a class="arrow-link" href="https://www.youtube.com/watch?v=InSW-tgK0SQ">YouTube →</a>
-            </div>
-          </article>
-        </div>
-        <p class="mt-24 text-sm"><a class="arrow-link" href="https://www.youtube.com/@BCHELECTRICLIMITED1965">BCH ELECTRIC LIMITED on YouTube →</a></p>
-      </section>
+      
 
       <section class="become-dealer section-border" id="become-a-dealer">
         <span class="section-label">Partner with BCH</span>
