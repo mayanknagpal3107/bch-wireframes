@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Noto Sans Devanagari";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Noto Sans Devanagari"),
+       url("fonts/NotoSansDevanagari-Regular.woff2") format("woff2"),
+       url("fonts/NotoSansDevanagari-Regular.ttf") format("truetype");
+  unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF;
+}
+@font-face {
+  font-family: "Noto Sans Devanagari";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Noto Sans Devanagari Medium"), url("fonts/NotoSansDevanagari-Medium.ttf") format("truetype");
+  unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF;
+}
+@font-face {
+  font-family: "Noto Sans Devanagari";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Noto Sans Devanagari SemiBold"),
+       url("fonts/NotoSansDevanagari-SemiBold.woff2") format("woff2"),
+       url("fonts/NotoSansDevanagari-SemiBold.ttf") format("truetype");
+  unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF;
+}
