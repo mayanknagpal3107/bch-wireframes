@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+start-cf-tunnel.sh
+cloudflared
+.wrangler/
+node_modules/

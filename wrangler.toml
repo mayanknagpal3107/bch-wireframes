@@ -1,0 +1,7 @@
+name = "bch-wireframes"
+compatibility_date = "2026-08-15"
+# Cloudflare Pages dashboard + `wrangler pages deploy`
+pages_build_output_dir = "."
+# Wrangler CLI / Workers static assets
+[assets]
+directory = "."
