@@ -1,1 +1,2 @@
-PLACEHOLDER_WILL_FAIL
+/* chrome.js — full file uploading; gate also lives here once complete */
+(function () {})();
