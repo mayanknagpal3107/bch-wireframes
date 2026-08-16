@@ -108,8 +108,8 @@
   var VIEW_KEY = "bch-view";
   var COUNTRIES = { in: 1, export: 1 };
   var LANGS = { en: 1, hi: 1 };
-  var COUNTRY_TRIGGER = { in: "India", export: "Export" };
-  var COUNTRY_OPTION = { in: "India", export: "Export (EN)" };
+  var COUNTRY_TRIGGER = { in: "India", export: "Global (Export)" };
+  var COUNTRY_OPTION = { in: "India", export: "Global (Export)" };
   var LANG_LABEL = { en: "English", hi: "हिंदी" };
   var LANG_CODE = { en: "EN", hi: "HI" };
 
@@ -364,7 +364,7 @@
       searchPh: "Ask AI — product, duty, range…",
       searchAria: "AI product search",
       searchBtn: "Ask",
-      chip: "Global",
+      chip: "Global (Export)",
       footerLine: "Industrial switchgear since 1965. India and export — exports@bchindia.com.",
       download: "Download Center",
       appAgri: "Agriculture &amp; pump sets",

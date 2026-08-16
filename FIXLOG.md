@@ -25,3 +25,4 @@ Design feedback pass after stakeholder-fix merge.
 - Tagline capitalized: **Har haal mein** (Hindi view: **हर हाल में**; Export: Current and Beyond).
 - Header / search Ask AI restored (placeholder, AI mark, Ask button).
 - Site favicon (`favicon.svg` / `.ico` / apple-touch) + Open Graph image (`og-image.png`) on all pages + chrome inject.
+- Region selector labels: **India**, then **Global (Export)** (was Export / Export (EN)).
