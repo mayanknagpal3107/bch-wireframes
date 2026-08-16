@@ -596,6 +596,7 @@ function aboutMega() {
       l2(href("company/news.html"), "NW", "News &amp; events") +
       l2(href("company/media.html"), "MD", "Media") +
       l2(href("solutions/case-studies.html"), "CS", "Case studies") +
+      l2(href("sitemap.html"), "SM", "Sitemap") +
       "</div>" +
       '<div class="mega-col">' +
       '<a class="mega-h" href="' + href("support/download-center.html") + '">Documents</a>' +
