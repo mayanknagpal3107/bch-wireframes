@@ -27,3 +27,4 @@ Design feedback pass after stakeholder-fix merge.
 - Site favicon (`favicon.svg` / `.ico` / apple-touch) + Open Graph image (`og-image.png`) on all pages + chrome inject.
 - Region selector labels: **India**, then **Global (Export)** (was Export / Export (EN)).
 - Footer Support column: **Report Counterfeit** (chrome rebuild + static labels).
+- Header/footer logo tagline: remove CSS `text-transform: lowercase` so **Har haal mein** / **हर हाल में** / **Current and Beyond** render as authored.

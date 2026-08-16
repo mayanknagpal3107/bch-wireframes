@@ -1803,7 +1803,7 @@ h1.ap-h1 {
 .nav-lockup .nav-logo { font-size: 14px; }
 .nav-tagline {
   display: block;
-  font-size: 9px; letter-spacing: 0.12em; text-transform: lowercase;
+  font-size: 9px; letter-spacing: 0.04em; text-transform: none;
   color: var(--muted); font-weight: 400; margin-top: 2px;
 }
 
@@ -1971,8 +1971,8 @@ h1.ap-h1 {
 .footer-tagline {
   display: block;
   font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  text-transform: none;
   color: var(--muted);
   font-style: italic;
   font-weight: 400;
@@ -2136,7 +2136,7 @@ html.loc-open, body.loc-open { overflow: hidden; }
 /* —— Footer tagline —— */
 .footer-tagline {
   display: block;
-  font-size: 10px; letter-spacing: 0.12em; text-transform: lowercase;
+  font-size: 10px; letter-spacing: 0.04em; text-transform: none;
   color: var(--muted); font-style: italic; font-weight: 400; margin: 0 0 10px;
 }
 
