@@ -30,16 +30,15 @@
     <div class="nav-links">
       <a href="index.html" data-nav="products" class="is-active">Products</a>
       <a href="../solutions/index.html" data-nav="solutions">Solutions</a>
-      <a href="../support/index.html" data-nav="support">Support</a>
-      <a href="../company/about.html" data-nav="company">Company</a>
-      <a href="../contact/index.html" data-nav="contact">Contact</a>
+      <a href="../company/index.html" data-nav="company">Company</a>
+      <a href="../support/resources.html" data-nav="resources">Resources</a>
     </div>
     <form class="nav-search" role="search" data-nav-search action="../search.html" method="get">
       <label class="visually-hidden">Search</label>
       <input type="search" name="q" placeholder="Search" aria-label="Search" />
       <button type="submit">Search</button>
     </form>
-    <a class="nav-cta" href="../support/download-center.html">Download Center</a>
+    <a class="nav-cta" href="../contact/index.html">Contact us</a>
   </nav>
   <main class="main">
 
@@ -75,6 +74,8 @@
             <button type="button" class="shelf-chip" data-val="submersible">Submersible / borewell</button>
             <button type="button" class="shelf-chip" data-val="oil">Oil starter</button>
             <button type="button" class="shelf-chip" data-val="auto">Auto-start (Shakti)</button>
+            <button type="button" class="shelf-chip" data-val="ats">Auto transformer</button>
+            <button type="button" class="shelf-chip" data-val="soft">Soft starter</button>
           </div>
         </div>
         <div class="shelf">
@@ -87,7 +88,7 @@
 
         <p class="shelf-empty" data-shelf-empty>Is HP / type pe is range mein match nahi — Enquire, branch bata dega.</p>
         <div class="shelf-result">
-          <a class="shelf-carton" data-shelf-item data-type="dol auto" data-phase="3" data-hp="3-20" href="motor-starters/shakti.html">
+          <a class="shelf-carton" data-shelf-item data-type="dol auto" data-phase="3" data-hp="3-20" href="motor-starters/shakti.html" id="shakti">
             <div class="ph">Box · Shakti DOL</div>
             <div class="body">
               <span class="workhorse-kicker">Shakti · 3–20 HP</span>
@@ -95,7 +96,7 @@
               <p>Pump wala DOL. Auto / Manual. Teen phase. Counter pe yahi naam se maangte hain.</p>
             </div>
           </a>
-          <a class="shelf-carton" data-shelf-item data-type="dol" data-phase="1 3" data-hp="0.5-20" href="motor-starters/citation-fasd-dol.html">
+          <a class="shelf-carton" data-shelf-item data-type="dol" data-phase="1 3" data-hp="0.5-20" href="motor-starters/citation-fasd-dol.html" id="citation">
             <div class="ph">Box · Citation</div>
             <div class="body">
               <span class="workhorse-kicker">Citation · 0.5–20 HP</span>
@@ -119,7 +120,7 @@
               <p>Bada load, star-delta. Typical 35 HP, size ke hisaab se 40–150 HP.</p>
             </div>
           </a>
-          <a class="shelf-carton" data-shelf-item data-type="submersible" data-phase="1 3" data-hp="0.5-20" href="motor-starters/submersible.html">
+          <a class="shelf-carton" data-shelf-item data-type="submersible" data-phase="1 3" data-hp="0.5-20" href="motor-starters/submersible.html" id="submersible">
             <div class="ph">Box · Submersible</div>
             <div class="body">
               <span class="workhorse-kicker">Borewell</span>
@@ -127,7 +128,7 @@
               <p>Dry-run protection. Single aur three phase.</p>
             </div>
           </a>
-          <a class="shelf-carton" data-shelf-item data-type="oil" data-phase="3" data-hp="1-20" href="motor-starters/oil-immersed.html">
+          <a class="shelf-carton" data-shelf-item data-type="oil" data-phase="3" data-hp="1-20" href="motor-starters/oil-immersed.html" id="oil-immersed">
             <div class="ph">Box · Oil starter</div>
             <div class="body">
               <span class="workhorse-kicker">Oil-immersed</span>
@@ -135,6 +136,31 @@
               <p>DOL / star-delta, oil-cooled. Purana counter naam — oil starter.</p>
             </div>
           </a>
+          <a class="shelf-carton" data-shelf-item data-type="ats" data-phase="3" data-hp="7.5-150" href="motor-starters/ats.html" id="ats">
+            <div class="ph">Box · ATS</div>
+            <div class="body">
+              <span class="workhorse-kicker">Auto transformer</span>
+              <h3>Auto Transformer Starter</h3>
+              <p>Reduced-voltage starting — not a DOL irrigation box. Brochure ranges; Enquire for duty.</p>
+            </div>
+          </a>
+          <a class="shelf-carton" data-shelf-item data-type="soft" data-phase="3" data-hp="10-800" href="#asab" id="asab">
+            <div class="ph">Box · ASAB</div>
+            <div class="body">
+              <span class="workhorse-kicker">Soft starter · ASAB</span>
+              <h3>ASAB soft starter</h3>
+              <p>7–800 kW typical · 23–1600 A. Range on this shelf — no separate PDP yet. <a href="../support/download-center.html#automation">Brochure →</a></p>
+            </div>
+          </a>
+          <a class="shelf-carton" data-shelf-item data-type="soft" data-phase="3" data-hp="5-200" href="motor-starters.html#asac" id="asac">
+            <div class="ph">Box · ASAC</div>
+            <div class="body">
+              <span class="workhorse-kicker">Soft starter · ASAC</span>
+              <h3>ASAC soft starter</h3>
+              <p>Smaller soft-starter frames. Range on Motor starters — <a href="../support/download-center.html#automation">brochure →</a></p>
+            </div>
+          </a>
+
         </div>
         <p class="mt-32"><a class="btn" href="all.html">All products</a> &nbsp; <a class="btn" href="../contact/index.html">Enquire</a> &nbsp; <a class="btn" href="../support/find-a-dealer.html">Dealer</a></p>
       </div>

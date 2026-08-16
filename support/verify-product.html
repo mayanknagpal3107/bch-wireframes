@@ -30,16 +30,15 @@
     <div class="nav-links">
       <a href="../products/index.html" data-nav="products">Products</a>
       <a href="../solutions/index.html" data-nav="solutions">Solutions</a>
-      <a href="index.html" data-nav="support" class="is-active">Support</a>
-      <a href="../company/about.html" data-nav="company">Company</a>
-      <a href="../contact/index.html" data-nav="contact">Contact</a>
+      <a href="../company/index.html" data-nav="company">Company</a>
+      <a href="../support/resources.html" data-nav="resources">Resources</a>
     </div>
     <form class="nav-search" role="search" data-nav-search action="../search.html" method="get">
       <label class="visually-hidden">Search</label>
       <input type="search" name="q" placeholder="Search" aria-label="Search" />
       <button type="submit">Search</button>
     </form>
-    <a class="nav-cta" href="download-center.html">Download Center</a>
+    <a class="nav-cta" href="../contact/index.html">Contact us</a>
   </nav>
   <main class="main">
 
@@ -138,7 +137,7 @@
               <h3>Need help?</h3>
               <p class="mb-8">Helpline <strong>1800 103 9262</strong> · 24/7</p>
               <p class="mb-16">Download Center for genuine packing / nameplate references. No prices on this page.</p>
-              <a class="btn" href="../index.html">Support →</a>
+              <a class="btn" href="index.html">Support →</a>
               <a class="btn" href="../products/all.html">All products →</a>
             </div>
           </div>
@@ -240,8 +239,9 @@
           el.hidden = true;
         });
         var key = "genuine";
-        if (!serial || !family) key = "notfound";
+        if (!serial) key = "notfound";
         else if (/fake|counter/i.test(serial)) key = "suspect";
+        /* Family is optional — valid serial with blank family still shows Genuine in this wireframe */
         var panel = document.querySelector('[data-verify-result="' + key + '"]');
         if (panel) {
           panel.hidden = false;

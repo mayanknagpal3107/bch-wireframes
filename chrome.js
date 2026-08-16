@@ -570,7 +570,7 @@ function aboutMega() {
     return (
       '<div class="mega-inner">' +
       '<div class="mega-col">' +
-      '<a class="mega-h" href="' + href("company/about.html") + '">' + m.company + "</a>" +
+      '<a class="mega-h" href="' + href("company/index.html") + '">' + m.company + "</a>" +
       l2(href("company/about.html"), "AB", "About") +
       l2(href("company/leadership.html"), "LD", "Leadership") +
       l2(href("company/about.html#history"), "HI", "History") +
@@ -676,7 +676,7 @@ function aboutMega() {
     links.setAttribute("data-mega-ready", "1");
     links.appendChild(wrapMega(href("products/index.html"), "products", labels.products, productsMega()));
     links.appendChild(wrapMega(href("solutions/index.html"), "solutions", labels.solutions, solutionsMega()));
-    links.appendChild(wrapMega(href("company/about.html"), "company", labels.company, aboutMega()));
+    links.appendChild(wrapMega(href("company/index.html"), "company", labels.company, aboutMega()));
     links.appendChild(wrapMega(href("support/resources.html"), "resources", labels.resources || "Resources", resourcesMega()));
     bindMega(nav);
     markActive(nav);
@@ -789,6 +789,7 @@ function aboutMega() {
       resources: "resources",
       counterfeit: null,
       verify: null,
+      company: "company",
       about: "company",
       manufacturing: "company",
       rd: "company",
@@ -1182,7 +1183,7 @@ function aboutMega() {
 
   function injectInquiry() {
     var page = pageKey();
-    if (page === "support" || page === "find-dealer") return;
+    if (page === "support" || page === "find-dealer" || page === "contact") return;
     var existing = document.getElementById("bch-inquiry");
     var i18 = t();
     if (existing) {
@@ -1211,9 +1212,7 @@ function aboutMega() {
   }
 
   function unlinkVigil() {
-    document.querySelectorAll('a[href="vigil.html"], a[href*="vigil.html"]').forEach(function (a) {
-      a.remove();
-    });
+    /* Vigil stays linked under Investor / governance — do not strip. */
   }
 
 
@@ -1436,8 +1435,15 @@ function aboutMega() {
     };
     if (!articlePages[page]) return;
     if (document.querySelector(".article-layout")) return;
+    if (document.body.getAttribute("data-article-shell") === "1") return;
     var header = document.querySelector(".page-header");
     if (!header) return;
+    /* Shell posts: short body — skip empty TOC / Explore-with-AI rail */
+    var mainProbe = document.querySelector("main .container") || document.querySelector("main");
+    if (mainProbe) {
+      var proseLen = (mainProbe.textContent || "").replace(/\s+/g, " ").trim().length;
+      if (proseLen < 1200 && page === "blog-post") return;
+    }
     var container = header.parentNode;
     if (!container) return;
 
@@ -1554,9 +1560,9 @@ function aboutMega() {
           '<div class="article-open-row">' +
             '<a class="btn btn-fill" target="_blank" rel="noopener" href="https://claude.ai/new?q=' + q + '">Claude</a>' +
             '<a class="btn" target="_blank" rel="noopener" href="https://chatgpt.com/?q=' + q + '">ChatGPT</a>' +
-            '<a class="btn" href="#flexicity" data-tool="FlexiCity">FlexiCity</a>' +
-            '<a class="btn" href="' + esc(liveUrl || "#") + '" target="_blank" rel="noopener">Blog</a>' +
-            '<a class="btn" href="#iconetsector" data-tool="IconetSector">IconetSector</a>' +
+            (live && liveUrl.indexOf("bchindia.com") !== -1
+              ? '<a class="btn" href="' + esc(liveUrl) + '" target="_blank" rel="noopener">Open live →</a>'
+              : "") +
           "</div>" +
         "</div>" +
       "</section>" +
@@ -1807,19 +1813,44 @@ function aboutMega() {
     var inp = document.getElementById("dl-search");
     if (!inp || inp.getAttribute("data-dl-bound") === "1") return;
     inp.setAttribute("data-dl-bound", "1");
+    var zero = document.getElementById("dl-zero");
+    if (!zero) {
+      zero = document.createElement("p");
+      zero.id = "dl-zero";
+      zero.className = "note-box";
+      zero.hidden = true;
+      zero.innerHTML = 'No catalogues match that search. Try another title or catalogue number, or <a href="' + href("contact/index.html") + '">Enquire</a>.';
+      var folders = document.getElementById("folders");
+      if (folders) folders.parentNode.insertBefore(zero, folders);
+    }
     inp.addEventListener("input", function () {
-      var q = (inp.value || "").toLowerCase().trim();
+      var q = (inp.value || "").toLowerCase().replace(/\s+/g, " ").trim();
+      var anyMatch = false;
       document.querySelectorAll(".doc-table tbody tr").forEach(function (tr) {
         var text = tr.textContent.toLowerCase();
-        tr.hidden = q ? text.indexOf(q) === -1 : false;
+        var match = !q || text.indexOf(q) !== -1;
+        tr.hidden = !match;
+        if (match && q) anyMatch = true;
       });
       document.querySelectorAll(".acc-item").forEach(function (item) {
         var rows = item.querySelectorAll(".doc-table tbody tr");
-        if (!rows.length) return;
-        var any = false;
-        rows.forEach(function (tr) { if (!tr.hidden) any = true; });
-        item.style.display = any || !q ? "" : "none";
+        if (!rows.length) {
+          item.style.display = q ? "none" : "";
+          item.hidden = !!q;
+          return;
+        }
+        var vis = 0;
+        rows.forEach(function (tr) { if (!tr.hidden) vis++; });
+        var show = !q || vis > 0;
+        item.style.display = show ? "" : "none";
+        item.hidden = !show;
+        if (q && vis > 0) {
+          item.classList.add("is-open");
+          var btn = item.querySelector("[data-acc]");
+          if (btn) btn.setAttribute("aria-expanded", "true");
+        }
       });
+      if (zero) zero.hidden = !(q && !anyMatch);
     });
   }
 

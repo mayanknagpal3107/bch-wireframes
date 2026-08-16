@@ -5,20 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Page not found — BCH Electric (Wireframe)</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-page="404" data-page-title="Page not found">
   <div class="wf-banner">Wireframe · IA v3 · not final</div>
-  <div class="utility-bar" aria-label="Utility"></div>
-  <nav class="site-nav" aria-label="Primary">
-    <a class="nav-logo" href="/">BCH<em>Electric</em></a>
-    <div class="nav-links">
-      <a href="/products/" data-nav="products">Products</a>
-      <a href="/solutions/" data-nav="solutions">Solutions</a>
-      <a href="/company/about.html" data-nav="company">Company</a>
-      <a href="/support/resources.html" data-nav="resources">Resources</a>
+  <div class="utility-bar" aria-label="Utility">
+    <div class="util-left">
+      <a href="products/selector.html">Product selector</a>
+      <a href="support/find-a-dealer.html">Find a dealer</a>
+      <a href="contact/index.html">Enquire</a>
     </div>
-    <a class="nav-cta" href="/contact/">Contact us</a>
+    <div class="loc-wrap">
+      <a class="util-support" href="support/index.html">Support</a>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-logo" href="index.html">BCH<em>Electric</em></a>
+    <button type="button" class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="products/index.html" data-nav="products">Products</a>
+      <a href="solutions/index.html" data-nav="solutions">Solutions</a>
+      <a href="company/index.html" data-nav="company">Company</a>
+      <a href="support/resources.html" data-nav="resources">Resources</a>
+    </div>
+    <form class="nav-search" role="search" data-nav-search action="search.html" method="get">
+      <label class="visually-hidden">Search</label>
+      <input type="search" name="q" placeholder="Search" aria-label="Search" />
+      <button type="submit">Search</button>
+    </form>
+    <a class="nav-cta" href="contact/index.html">Contact us</a>
   </nav>
   <main class="main">
     <div class="container">
@@ -26,11 +41,19 @@
         <span class="section-label">404</span>
         <h1>This page is not in the wireframe.</h1>
         <p class="lead">The URL is missing or was renamed. Use the sitemap or go home.</p>
-        <p><a class="btn" href="/">Home</a> &nbsp; <a class="arrow-link" href="/sitemap.html">Sitemap →</a></p>
+        <p><a class="btn" href="index.html">Home</a> &nbsp; <a class="arrow-link" href="sitemap.html">Sitemap →</a></p>
       </header>
     </div>
   </main>
-  <footer class="site-footer"><div class="container"></div></footer>
-  <script src="/chrome.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© BCH Electric Limited · Wireframe IA v3</span>
+        <span>Grayscale · BrandClef</span>
+      </div>
+    </div>
+  </footer>
+  <script src="chrome.js"></script>
+  <script src="feedback.js"></script>
 </body>
 </html>
