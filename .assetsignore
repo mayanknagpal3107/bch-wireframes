@@ -27,3 +27,14 @@ f6.png
 ff.png
 ind.png
 wwa.png
+
+# Research / inventory — not needed on the live wireframe
+BENCHMARK-IA.md
+CATALOG-SPECS.md
+CURRENT-SITE-INVENTORY.md
+LIBERATE-NAV-IA.md
+PDP-VS-PANEL-IA.md
+PRODUCT-VERIFY.md
+SCHNEIDER-ALL-PRODUCTS-IA.md
+current-site-inventory.json
+__pycache__/

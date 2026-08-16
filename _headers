@@ -1,6 +1,7 @@
 # Default: HTML (and other pages) must not stick in cache so review feedback sees updates.
 /*
   Cache-Control: no-cache
+  X-Robots-Tag: noindex, nofollow
 
 # Bundled Noto Sans Devanagari — immutable filenames
 /fonts/*

@@ -1,7 +1,9 @@
 name = "bch-wireframes"
 compatibility_date = "2026-08-15"
-# Cloudflare Pages dashboard + `wrangler pages deploy`
-pages_build_output_dir = "."
-# Wrangler CLI / Workers static assets
+
+# Workers static site (workers.dev). Do not set pages_build_output_dir —
+# that flag is for Pages projects and was mixed in incorrectly.
 [assets]
-directory = "."
+directory = "./"
+not_found_handling = "404-page"
+html_handling = "auto-trailing-slash"

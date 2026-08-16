@@ -3088,3 +3088,34 @@ details.wf-acc summary {
   list-style: none;
 }
 details.wf-acc summary::-webkit-details-marker { display: none; }
+
+
+/* Desktop-only gate (phones). chrome.js also injects this so the overlay
+   still paints if this file is slow. */
+html.bch-gate-lock,
+html.bch-gate-lock body { overflow: hidden !important; }
+#bch-desktop-gate {
+  position: fixed; inset: 0; z-index: 10000;
+  background: #111; color: #f4f4f4;
+  display: flex; align-items: center; justify-content: center;
+  padding: 28px 22px;
+}
+#bch-desktop-gate .gate-card {
+  max-width: 28rem; width: 100%; text-align: left;
+  border: 1px solid #333; background: #1a1a1a; padding: 28px 24px;
+}
+#bch-desktop-gate .gate-kicker {
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #999; margin: 0 0 12px;
+}
+#bch-desktop-gate h1 {
+  font-size: 22px; font-weight: 600; line-height: 1.25; color: #fff; margin: 0 0 12px;
+}
+#bch-desktop-gate p { color: #bbb; font-size: 14px; line-height: 1.5; margin: 0 0 10px; max-width: none; }
+#bch-desktop-gate .gate-hi { color: #888; font-size: 13px; }
+#bch-desktop-gate [data-gate-continue] {
+  margin-top: 20px; border: 1px solid #f4f4f4; background: transparent;
+  color: #f4f4f4; padding: 10px 16px; font-size: 13px; letter-spacing: 0.04em;
+}
+#bch-desktop-gate [data-gate-continue]:hover,
+#bch-desktop-gate [data-gate-continue]:focus { background: #f4f4f4; color: #111; }
