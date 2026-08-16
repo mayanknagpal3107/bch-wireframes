@@ -106,12 +106,12 @@
 
   var LOC_KEY = "bch-loc";
   var VIEW_KEY = "bch-view";
-  var COUNTRIES = { in: 1, de: 1, export: 1 };
-  var LANGS = { en: 1, hi: 1, de: 1 };
-  var COUNTRY_TRIGGER = { in: "India", de: "Germany", export: "Export" };
-  var COUNTRY_OPTION = { in: "India (Global)", de: "Germany", export: "Export" };
-  var LANG_LABEL = { en: "English", hi: "हिंदी", de: "Deutsch" };
-  var LANG_CODE = { en: "EN", hi: "HI", de: "DE" };
+  var COUNTRIES = { in: 1, export: 1 };
+  var LANGS = { en: 1, hi: 1 };
+  var COUNTRY_TRIGGER = { in: "India", export: "Export" };
+  var COUNTRY_OPTION = { in: "India", export: "Export (EN)" };
+  var LANG_LABEL = { en: "English", hi: "हिंदी" };
+  var LANG_CODE = { en: "EN", hi: "HI" };
 
   function pageKey() {
     var el = document.body && document.body.getAttribute("data-page");
@@ -125,21 +125,24 @@
   }
 
   function normalizeLoc(obj) {
-    var country = obj && COUNTRIES[obj.country] ? obj.country : "in";
-    var lang = obj && LANGS[obj.lang] ? obj.lang : "en";
+    var country = obj && obj.country;
+    if (country === "de") country = "in"; /* Germany region retired */
+    country = COUNTRIES[country] ? country : "in";
+    var lang = obj && obj.lang;
+    if (lang === "de") lang = "en";
+    lang = LANGS[lang] ? lang : "en";
     return { country: country, lang: lang };
   }
 
   function locFromLegacyView(v) {
     if (v === "global") return { country: "export", lang: "en" };
     if (v === "hi") return { country: "in", lang: "hi" };
-    if (v === "de") return { country: "de", lang: "de" };
+    if (v === "de") return { country: "in", lang: "en" }; /* DE retired */
     if (v === "en") return { country: "in", lang: "en" };
     return defaultLoc();
   }
 
   function deriveView(loc) {
-    if (loc.country === "de") return "de";
     if (loc.country === "export") return "global";
     return loc.lang;
   }
@@ -173,7 +176,7 @@
 
   function brandTagline() {
     var loc = getLoc();
-    if (loc.country === "de" || loc.country === "export") return "Current and Beyond";
+    if (loc.country === "export") return "Current and Beyond";
     return "har haal mein";
   }
 
@@ -187,7 +190,7 @@
   function applyLoc(loc) {
     loc = normalizeLoc(loc);
     var html = document.documentElement;
-    var lang = loc.lang === "hi" ? "hi" : loc.lang === "de" ? "de" : "en";
+    var lang = loc.lang === "hi" ? "hi" : "en";
     html.setAttribute("lang", lang);
     html.setAttribute("data-country", loc.country);
     html.setAttribute("data-lang", loc.lang);
@@ -309,9 +312,9 @@
       },
       inquiryH2: "Let’s explore how we can help",
       inquiryLead: "Tell us what you need. We’ll get in touch.",
-      searchPh: "Ask AI — product, duty, range…",
-      searchAria: "AI product search",
-      searchBtn: "Ask",
+      searchPh: "Search products, duty, range…",
+      searchAria: "Search",
+      searchBtn: "Search",
       chip: "English",
       footerLine: "Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.",
       download: "Download Center",
@@ -357,9 +360,9 @@
       },
       inquiryH2: "Let’s explore how we can help",
       inquiryLead: "Export and domestic enquiries. Export: exports@bchindia.com — no overseas branch list on this site.",
-      searchPh: "Ask AI — product, duty, range…",
-      searchAria: "AI product search",
-      searchBtn: "Ask",
+      searchPh: "Search products, duty, range…",
+      searchAria: "Search",
+      searchBtn: "Search",
       chip: "Global",
       footerLine: "Industrial switchgear since 1965. India and export — exports@bchindia.com.",
       download: "Download Center",
@@ -405,7 +408,7 @@
       },
       inquiryH2: "आइए देखें कि हम कैसे मदद कर सकते हैं",
       inquiryLead: "ज़रूरत बताएँ। हम संपर्क करेंगे।",
-      searchPh: "AI से पूछें — उत्पाद, ड्यूटी, रेंज…",
+      searchPh: "उत्पाद, ड्यूटी, रेंज खोजें…",
       searchAria: "AI उत्पाद खोज",
       searchBtn: "पूछें",
       chip: "हिंदी दृश्य · wireframe",
@@ -591,7 +594,7 @@ function aboutMega() {
     return (
       '<div class="mega-inner">' +
       '<div class="mega-col">' +
-      '<a class="mega-h" href="' + href("support/resources.html") + '">Insights</a>' +
+      '<a class="mega-h" href="' + href("support/download-center.html") + '">Resources</a>' +
       l2(href("blogs/index.html"), "BL", "Blog") +
       l2(href("company/news.html"), "NW", "News &amp; events") +
       l2(href("company/media.html"), "MD", "Media") +
@@ -677,7 +680,7 @@ function aboutMega() {
     links.appendChild(wrapMega(href("products/index.html"), "products", labels.products, productsMega()));
     links.appendChild(wrapMega(href("solutions/index.html"), "solutions", labels.solutions, solutionsMega()));
     links.appendChild(wrapMega(href("company/index.html"), "company", labels.company, aboutMega()));
-    links.appendChild(wrapMega(href("support/resources.html"), "resources", labels.resources || "Resources", resourcesMega()));
+    links.appendChild(wrapMega(href("support/download-center.html"), "resources", labels.resources || "Resources", resourcesMega()));
     bindMega(nav);
     markActive(nav);
     var qm = /(?:\?|&)mega=([a-z]+)/.exec(location.search || "");
@@ -1080,7 +1083,7 @@ function aboutMega() {
     var i18 = t();
     document.querySelectorAll("form.nav-search").forEach(function (form) {
       form.setAttribute("action", href("search.html"));
-      form.classList.add("is-ai");
+      /* form.classList.add("is-ai"); */
       var inp = form.querySelector('input[type="search"]');
       var btn = form.querySelector('button[type="submit"]');
       var lab = form.querySelector("label");
@@ -1088,13 +1091,9 @@ function aboutMega() {
       if (inp) {
         inp.setAttribute("placeholder", i18.searchPh);
         inp.setAttribute("aria-label", i18.searchAria);
-        if (!form.querySelector(".ask-mark")) {
-          var mark = document.createElement("span");
-          mark.className = "ask-mark";
-          mark.setAttribute("aria-hidden", "true");
-          mark.textContent = "AI";
-          form.insertBefore(mark, inp);
-        }
+        form.querySelectorAll(".ask-mark").forEach(function (el) {
+          el.remove();
+        });
       }
       if (btn) btn.textContent = i18.searchBtn;
     });
@@ -1182,32 +1181,9 @@ function aboutMega() {
   }
 
   function injectInquiry() {
-    var page = pageKey();
-    if (page === "support" || page === "find-dealer" || page === "contact") return;
-    var existing = document.getElementById("bch-inquiry");
-    var i18 = t();
-    if (existing) {
-      var h2 = existing.querySelector("[data-inquiry-h2], h2");
-      var lead = existing.querySelector("[data-inquiry-lead], .lead");
-      if (h2) h2.textContent = i18.inquiryH2;
-      if (lead) lead.textContent = i18.inquiryLead;
-      return;
-    }
-    var footer = document.querySelector(".site-footer");
-    if (!footer) return;
-    var wrap = document.createElement("div");
-    wrap.innerHTML = inquiryHTML();
-    footer.parentNode.insertBefore(wrap.firstChild, footer);
-    var form = document.querySelector("form[data-inquiry-form]");
-    if (!form) return;
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      var note = form.querySelector(".inquiry-note");
-      if (note) {
-        note.hidden = false;
-        note.textContent = "Thank you — we’ll be in touch.";
-      }
+    /* Global enquiry band retired — canonical form is contact/index.html. */
+    document.querySelectorAll("#bch-inquiry, .inquiry-band").forEach(function (el) {
+      el.remove();
     });
   }
 
@@ -1268,101 +1244,61 @@ function aboutMega() {
         soc.innerHTML =
           '<a href="https://www.linkedin.com/company/bch-electric-ltd-faridabad" target="_blank" rel="noopener">LinkedIn</a>' +
           '<a href="https://www.instagram.com/bchelectric/" target="_blank" rel="noopener">Instagram</a>' +
-          '<a href="https://www.facebook.com/bchelectric" target="_blank" rel="noopener">Facebook</a>';
+          '<a href="https://wa.me/9118001039262" target="_blank" rel="noopener">WhatsApp</a>';
         brand.parentNode.appendChild(soc);
       }
     });
-    document.querySelectorAll(".footer-col h5").forEach(function (h) {
-      var k = h.getAttribute("data-en") || h.textContent.trim();
-      if (!h.getAttribute("data-en")) h.setAttribute("data-en", k);
-      var map = { Products: i18.nav.products, Solutions: i18.nav.solutions, Support: i18.nav.support, Company: i18.nav.company };
-      if (map[h.getAttribute("data-en")]) h.textContent = map[h.getAttribute("data-en")];
-    });
+    var grid = document.querySelector(".footer-grid");
+    if (grid) {
+      var brandBlock = grid.children[0] ? grid.children[0].outerHTML : "";
+      grid.innerHTML =
+        brandBlock +
+        '<div class="footer-col"><h5 data-en="Products">' + (i18.nav.products || "Products") + "</h5>" +
+        '<a href="' + href("products/all.html") + '">All products</a>' +
+        '<a href="' + href("products/motor-starters.html") + '">Motor starters</a>' +
+        '<a href="' + href("products/power-control.html") + '">Power control</a>' +
+        '<a href="' + href("products/enclosures.html") + '">Enclosures</a>' +
+        '<a href="' + href("support/download-center.html") + '">Download Center</a>' +
+        '<a href="' + href("products/selector.html") + '">Product selector</a>' +
+        "</div>" +
+        '<div class="footer-col"><h5 data-en="Solutions">' + (i18.nav.solutions || "Solutions") + "</h5>" +
+        '<a href="' + href("solutions/index.html") + '">Solutions hub</a>' +
+        '<a href="' + href("solutions/custom-panels.html") + '">Custom panels</a>' +
+        '<a href="' + href("solutions/industries.html") + '">Industries</a>' +
+        '<a href="' + href("solutions/partners.html") + '">Partners</a>' +
+        '<a href="' + href("solutions/case-studies.html") + '">Case studies</a>' +
+        "</div>" +
+        '<div class="footer-col"><h5 data-en="Support">' + (i18.nav.support || "Support") + "</h5>" +
+        '<a href="' + href("support/index.html") + '">Support hub</a>' +
+        '<a href="' + href("support/find-a-dealer.html") + '">Find a dealer</a>' +
+        '<a href="' + href("support/verify-product.html") + '">Verify product</a>' +
+        '<a href="' + href("support/faqs.html") + '">FAQ</a>' +
+        '<a href="' + href("contact/index.html") + '">Enquire</a>' +
+        '<a href="https://wa.me/9118001039262" target="_blank" rel="noopener">WhatsApp</a>' +
+        "</div>" +
+        '<div class="footer-col"><h5 data-en="Company">' + (i18.nav.company || "Company") + "</h5>" +
+        '<a href="' + href("company/index.html") + '">Company hub</a>' +
+        '<a href="' + href("company/about.html") + '">About</a>' +
+        '<a href="' + href("company/investor.html") + '">Investor</a>' +
+        '<a href="' + href("company/careers.html") + '">Careers</a>' +
+        '<a href="' + href("blogs/index.html") + '">Blog</a>' +
+        '<a href="' + href("company/news.html") + '">News</a>' +
+        "</div>";
+    }
     var legal = document.querySelector(".footer-legal");
     if (legal) {
       legal.innerHTML =
         '<a href="' + href("legal/privacy.html") + '">Privacy</a>' +
         '<a href="' + href("legal/terms.html") + '">Terms</a>' +
-        '<a href="' + href("legal/data-privacy.html") + '">Data privacy</a>' +
-        '<span class="footer-copy">© BCH Electric Limited 2026</span>' +
         '<a href="' + href("company/public-notices.html") + '">Public notices</a>' +
-        '<a href="' + href("company/careers.html") + '">Careers</a>';
+        '<a href="' + href("company/vigil.html") + '">Vigil</a>';
     }
-    var grid = document.querySelector(".footer-grid");
-    if (grid && !grid.querySelector("[data-footer-auth]")) {
-      var auth = document.createElement("div");
-      auth.className = "footer-col";
-      auth.setAttribute("data-footer-auth", "1");
-      auth.innerHTML =
-        "<h5>Authenticity</h5>" +
-        '<a href="' + href("support/verify-product.html") + '">Validate your product</a>' +
-        '<a href="' + href("support/report-counterfeit.html") + '">Report a counterfeit</a>';
-      grid.appendChild(auth);
-    }
-    document.querySelectorAll(".footer-col:not([data-footer-auth]) a").forEach(function (a) {
-      var h = (a.getAttribute("href") || "").toLowerCase();
-      if (h.indexOf("verify-product") !== -1 || h.indexOf("report-counterfeit") !== -1) {
-        a.remove();
-      }
-    });
-    document.querySelectorAll(".footer-col").forEach(function (col) {
-      var h = col.querySelector("h5");
-      if (!h) return;
-      var en = (h.getAttribute("data-en") || h.textContent || "").toLowerCase();
-      function addLink(path, label, needle) {
-        if (col.querySelector('a[href*="' + needle + '"]')) return;
-        var x = document.createElement("a");
-        x.href = href(path);
-        x.textContent = label;
-        col.appendChild(x);
-      }
-      if (en.indexOf("product") !== -1) {
-        addLink("products/combo-kits.html", "Combo kits", "combo-kits");
-      }
-      if (en.indexOf("solution") !== -1) {
-        addLink("solutions/custom-panels.html", "Custom panels", "custom-panels");
-      }
-      if (en.indexOf("support") !== -1 || en.indexOf("सहायता") !== -1 || en.indexOf("service") !== -1) {
-        addLink("support/dealer-tools.html", "Dealer tools", "dealer-tools");
-        addLink("support/download-center.html", "Download Center", "download-center");
-        addLink("support/digital-ecosystem.html", "Digital ecosystem", "digital-ecosystem");
-      }
-      if (/company/i.test(h.textContent)) {
-        col.querySelectorAll("a").forEach(function (a) {
-          var hrf = (a.getAttribute("href") || "").toLowerCase();
-          if (hrf.indexOf("inventory") !== -1) { a.remove(); return; }
-          if (hrf.indexOf("board.html") !== -1) {
-            a.setAttribute("href", href("company/leadership.html"));
-            a.textContent = "Leadership";
-          }
-          if (hrf.indexOf("research.html") !== -1) {
-            a.remove();
-            return;
-          }
-          if (hrf.indexOf("manufacturing.html") !== -1) {
-            a.textContent = "Manufacturing & R&D";
-          }
-          if (hrf.indexOf("careers") !== -1) {
-            a.setAttribute("href", href("company/careers.html"));
-            a.removeAttribute("target");
-            a.removeAttribute("rel");
-          }
-        });
-        if (!col.querySelector('a[href*="leadership"]')) {
-          addLink("company/leadership.html", "Leadership", "leadership");
-        }
-        if (!col.querySelector('a[href*="brand-media"]')) {
-          addLink("company/brand-media.html", "Brand & Media", "brand-media");
-        }
-        if (!col.querySelector('a[href*="dpdp"]')) {
-          var a = document.createElement("a");
-          a.href = href("legal/dpdp.html");
-          a.textContent = "DPDP compliance";
-          col.appendChild(a);
-        }
-      }
+    document.querySelectorAll(".footer-bottom").forEach(function (el, i) {
+      if (i > 0) el.remove();
+      else el.innerHTML = "<span>© BCH Electric Limited · Wireframe IA v3</span><span>Grayscale · BrandClef</span>";
     });
   }
+
 
 
   var LOGO_CUSTOMERS = [
@@ -1550,24 +1486,8 @@ function aboutMega() {
     tools.className = "article-tools";
     tools.innerHTML =
       tocHtml +
-      '<section class="article-explore" aria-label="Explore with AI">' +
-        '<span class="section-label">Explore with AI</span>' +
-        '<div class="article-loader" aria-label="Loader">' +
-          '<div class="article-load-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>' +
-          '<p class="article-load-status">Loading article…</p>' +
-        "</div>" +
-        '<div class="article-open is-wait">' +
-          '<div class="article-open-row">' +
-            '<a class="btn btn-fill" target="_blank" rel="noopener" href="https://claude.ai/new?q=' + q + '">Claude</a>' +
-            '<a class="btn" target="_blank" rel="noopener" href="https://chatgpt.com/?q=' + q + '">ChatGPT</a>' +
-            (live && liveUrl.indexOf("bchindia.com") !== -1
-              ? '<a class="btn" href="' + esc(liveUrl) + '" target="_blank" rel="noopener">Open live →</a>'
-              : "") +
-          "</div>" +
-        "</div>" +
-      "</section>" +
       '<section class="article-share" aria-label="Share">' +
-        '<span class="article-share-label">Share it on</span>' +
+        '<span class="article-share-label">Share</span>' +
         '<div class="article-share-row">' +
           '<a target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=' + shareQ + '">LinkedIn</a>' +
           '<a target="_blank" rel="noopener" href="https://wa.me/?text=' + shareText + '">WhatsApp</a>' +
@@ -1584,23 +1504,6 @@ function aboutMega() {
     layout.appendChild(rail);
     layout.appendChild(main);
     container.insertBefore(layout, header.nextSibling);
-
-    var bar = tools.querySelector(".article-load-track i");
-    var status = tools.querySelector(".article-load-status");
-    var open = tools.querySelector(".article-open");
-    var track = tools.querySelector(".article-load-track");
-    var n = 0;
-    var timer = setInterval(function () {
-      n += 8;
-      if (n > 100) n = 100;
-      if (bar) bar.style.width = n + "%";
-      if (track) track.setAttribute("aria-valuenow", String(n));
-      if (n >= 100) {
-        clearInterval(timer);
-        if (status) status.textContent = "Article ready.";
-        if (open) open.classList.remove("is-wait");
-      }
-    }, 40);
 
     var copyBtn = tools.querySelector("[data-copy-link]");
     if (copyBtn) {
