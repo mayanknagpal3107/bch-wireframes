@@ -16,10 +16,12 @@ Design feedback pass after stakeholder-fix merge.
 - News index curated to 8 items; PF notices stay under Public notices.
 - Dealer-meet videos moved to Dealer tools.
 - Germany / Deutsch region retired (India EN/HI + Export).
-- Ask AI search branding removed.
 - Automation / brakes on all.html → brochure-download rows.
 
 ## Added / improved
 - PDP action rail: Where to buy · Download brochure · Enquire; starter compare table.
 - Light facets on power-control / enclosures; WhatsApp touchpoints on contact, dealer, footer.
 - Vigil remains linked under Investor / footer legal.
+- Tagline capitalized: **Har haal mein** (Hindi view: **हर हाल में**; Export: Current and Beyond).
+- Header / search Ask AI restored (placeholder, AI mark, Ask button).
+- Site favicon (`favicon.svg` / `.ico` / apple-touch) + Open Graph image (`og-image.png`) on all pages + chrome inject.

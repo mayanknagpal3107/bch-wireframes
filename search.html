@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI search — Ask BCH — BCH Electric (Wireframe)</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta property="og:image" content="og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="og-image.png" />
 </head>
 <body data-page="search" data-page-title="AI search / Ask BCH">
   <div class="wf-banner">Wireframe · IA v3 · not final</div>
@@ -48,10 +54,11 @@
         <p class="lead">Explores named BCH ranges from the catalogue (wireframe — not a live model). Ask by product, duty or range — we match real brochure families only.</p>
       </header>
       <section class="section-tight">
-        <form action="search.html" method="get" class="nav-search" id="page-search" style="max-width:560px;margin:0;">
-          <label class="visually-hidden">Search</label>
-          <input type="search" name="q" id="search-q" placeholder="Search products, duty, range…" aria-label="Search" />
-          <button type="submit">Search</button>
+        <form action="search.html" method="get" class="nav-search is-ai" id="page-search" style="max-width:560px;margin:0;">
+          <label class="visually-hidden">AI product search</label>
+          <span class="ask-mark" aria-hidden="true">AI</span>
+          <input type="search" name="q" id="search-q" placeholder="Ask AI — products, duty, ranges…" aria-label="AI product search" />
+          <button type="submit">Ask</button>
         </form>
         <div class="search-suggest" aria-label="Suggested">
           <a href="search.html?q=15%20HP%20pump%20starter">15 HP pump starter</a>
@@ -80,7 +87,7 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand">BCH Electric</div>
-          <div class="footer-tagline">har haal mein</div>
+          <div class="footer-tagline">Har haal mein</div>
           <p>Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.</p>
         </div>
         <div class="footer-col">

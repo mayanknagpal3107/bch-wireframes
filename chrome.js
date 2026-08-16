@@ -177,7 +177,8 @@
   function brandTagline() {
     var loc = getLoc();
     if (loc.country === "export") return "Current and Beyond";
-    return "har haal mein";
+    if (loc.lang === "hi") return "हर हाल में";
+    return "Har haal mein";
   }
 
   function applyTaglines() {
@@ -312,9 +313,9 @@
       },
       inquiryH2: "Let’s explore how we can help",
       inquiryLead: "Tell us what you need. We’ll get in touch.",
-      searchPh: "Search products, duty, range…",
-      searchAria: "Search",
-      searchBtn: "Search",
+      searchPh: "Ask AI — product, duty, range…",
+      searchAria: "AI product search",
+      searchBtn: "Ask",
       chip: "English",
       footerLine: "Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.",
       download: "Download Center",
@@ -360,9 +361,9 @@
       },
       inquiryH2: "Let’s explore how we can help",
       inquiryLead: "Export and domestic enquiries. Export: exports@bchindia.com — no overseas branch list on this site.",
-      searchPh: "Search products, duty, range…",
-      searchAria: "Search",
-      searchBtn: "Search",
+      searchPh: "Ask AI — product, duty, range…",
+      searchAria: "AI product search",
+      searchBtn: "Ask",
       chip: "Global",
       footerLine: "Industrial switchgear since 1965. India and export — exports@bchindia.com.",
       download: "Download Center",
@@ -408,7 +409,7 @@
       },
       inquiryH2: "आइए देखें कि हम कैसे मदद कर सकते हैं",
       inquiryLead: "ज़रूरत बताएँ। हम संपर्क करेंगे।",
-      searchPh: "उत्पाद, ड्यूटी, रेंज खोजें…",
+      searchPh: "AI से पूछें — उत्पाद, ड्यूटी, रेंज…",
       searchAria: "AI उत्पाद खोज",
       searchBtn: "पूछें",
       chip: "हिंदी दृश्य · wireframe",
@@ -1083,7 +1084,7 @@ function aboutMega() {
     var i18 = t();
     document.querySelectorAll("form.nav-search").forEach(function (form) {
       form.setAttribute("action", href("search.html"));
-      /* form.classList.add("is-ai"); */
+      form.classList.add("is-ai");
       var inp = form.querySelector('input[type="search"]');
       var btn = form.querySelector('button[type="submit"]');
       var lab = form.querySelector("label");
@@ -1091,9 +1092,13 @@ function aboutMega() {
       if (inp) {
         inp.setAttribute("placeholder", i18.searchPh);
         inp.setAttribute("aria-label", i18.searchAria);
-        form.querySelectorAll(".ask-mark").forEach(function (el) {
-          el.remove();
-        });
+        if (!form.querySelector(".ask-mark")) {
+          var mark = document.createElement("span");
+          mark.className = "ask-mark";
+          mark.setAttribute("aria-hidden", "true");
+          mark.textContent = "AI";
+          form.insertBefore(mark, inp);
+        }
       }
       if (btn) btn.textContent = i18.searchBtn;
     });
@@ -1644,6 +1649,31 @@ function aboutMega() {
     upsertMeta("property", "og:description", desc);
     upsertMeta("property", "og:type", document.body.getAttribute("data-page") === "blog-post" ? "article" : "website");
     upsertMeta("property", "og:site_name", brand);
+    var ogImg = href("og-image.png");
+    var absOg = ogImg;
+    try {
+      if (location.protocol.indexOf("http") === 0) {
+        absOg = new URL(ogImg, location.href).href;
+      }
+    } catch (e) {}
+    upsertMeta("property", "og:image", absOg);
+    upsertMeta("name", "twitter:card", "summary_large_image");
+    upsertMeta("name", "twitter:title", fullTitle);
+    upsertMeta("name", "twitter:description", desc);
+    upsertMeta("name", "twitter:image", absOg);
+    function upsertLink(rel, hrefVal, attrs) {
+      var el = document.head.querySelector('link[rel="' + rel + '"]');
+      if (!el) {
+        el = document.createElement("link");
+        el.rel = rel;
+        document.head.appendChild(el);
+      }
+      el.href = hrefVal;
+      if (attrs) Object.keys(attrs).forEach(function (k) { el.setAttribute(k, attrs[k]); });
+    }
+    upsertLink("icon", href("favicon.svg"), { type: "image/svg+xml" });
+    upsertLink("alternate icon", href("favicon.ico"));
+    upsertLink("apple-touch-icon", href("apple-touch-icon.png"));
     var path = (location.pathname || "/").replace(/index\.html$/, "").replace(/\.html$/, "/");
     if (path.length > 1 && path.slice(-1) !== "/") path += "/";
     var canonHref = (location.origin || "") + path;
