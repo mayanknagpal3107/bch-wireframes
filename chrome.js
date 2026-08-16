@@ -1277,9 +1277,9 @@ function aboutMega() {
         '<a href="' + href("support/index.html") + '">Support hub</a>' +
         '<a href="' + href("support/find-a-dealer.html") + '">Find a dealer</a>' +
         '<a href="' + href("support/verify-product.html") + '">Verify product</a>' +
+        '<a href="' + href("support/report-counterfeit.html") + '">Report Counterfeit</a>' +
         '<a href="' + href("support/faqs.html") + '">FAQ</a>' +
         '<a href="' + href("contact/index.html") + '">Enquire</a>' +
-        '<a href="https://wa.me/9118001039262" target="_blank" rel="noopener">WhatsApp</a>' +
         "</div>" +
         '<div class="footer-col"><h5 data-en="Company">' + (i18.nav.company || "Company") + "</h5>" +
         '<a href="' + href("company/index.html") + '">Company hub</a>' +
