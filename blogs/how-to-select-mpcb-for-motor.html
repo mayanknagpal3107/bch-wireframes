@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Select an MPCB by Motor Current and Duty — BCH Electric (Wireframe)</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-page="blog-post" data-page-title="How to Select an MPCB by Motor Current and Duty">
+  <div class="wf-banner">Wireframe · IA v3 · not final</div>
+  <div class="utility-bar" aria-label="Utility">
+    <nav class="lang-bar" aria-label="Language / view">
+      <button type="button" class="lang-opt" data-view="global">Global</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="hi">हिंदी</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt is-active" data-view="en" aria-pressed="true">English</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="de">Deutsch</button>
+    </nav>
+    <div class="util-right">
+      <a href="../products/selector.html">Product selector</a>
+      <a href="../support/find-a-dealer.html">Find a dealer</a>
+      <a href="../contact/index.html">Enquire</a>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-logo" href="../index.html">BCH<em>Electric</em></a>
+    <button type="button" class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="../products/index.html" data-nav="products">Products</a>
+      <a href="../solutions/index.html" data-nav="solutions">Solutions</a>
+      <a href="../support/index.html" data-nav="support">Support</a>
+      <a href="../company/about.html" data-nav="company" class="is-active">Company</a>
+      <a href="../contact/index.html" data-nav="contact">Contact</a>
+    </div>
+    <form class="nav-search" role="search" data-nav-search action="../search.html" method="get">
+      <label class="visually-hidden">Search</label>
+      <input type="search" name="q" placeholder="Search" aria-label="Search" />
+      <button type="submit">Search</button>
+    </form>
+    <a class="nav-cta" href="../support/download-center.html">Download Center</a>
+  </nav>
+  <main class="main">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Blog</a><span>/</span>How to Select an MPCB by Motor Current and Duty</div>
+      <header class="page-header">
+        <span class="section-label">From the live blog</span>
+        <h1>How to Select an MPCB by Motor Current and Duty</h1>
+        <p class="article-date">27 Jul 2026</p>
+      </header>
+      <blockquote class="article-pull">
+        <span class="section-label">Quick answer</span>
+        <p>Select an MPCB whose adjustable thermal range includes the motor nameplate current. Then confirm that the device can tolerate the motor’s starting current, safely handle the prospective short-circuit level, and coordinate with the selected contactor and upstream protection. Motor kilowatts or horsepower can help create an initial shortlist, but they should not replace the actual motor current, starting method, duty cycle and installation data.</p>
+      </blockquote>
+      <article class="article-body">
+        <p>The correct MPCB is therefore not simply the smallest or largest range that contains the motor current. It is the device whose thermal setting, magnetic response, breaking capacity, accessories and tested coordination suit the complete motor feeder.</p>
+
+        <h2>What an MPCB does in a motor feeder</h2>
+        <p>A motor protection circuit breaker combines adjustable overload protection, short-circuit protection and manual switching in one compact device. It is designed around motor behaviour, including the need to carry legitimate starting current without unnecessary tripping.</p>
+        <p>An MPCB does not perform every control function in a starter. Where the motor must start and stop remotely, operate automatically or switch frequently, the feeder normally also requires a compatible contactor. See also <a href="mpcb-vs-mcb-vs-overload-relay.html">MPCB vs MCB vs Overload Relay for Motor Protection</a> and the <a href="../products/motor-control.html#mpcb">MPCB range</a>.</p>
+
+        <h2>Inputs required before MPCB selection</h2>
+        <table>
+          <thead><tr><th>Input</th><th>What to record</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td>Motor current and voltage</td><td>Nameplate current at the intended voltage and connection</td><td>Defines the required adjustable thermal range</td></tr>
+            <tr><td>Starting method</td><td>Direct-on-line, star-delta, soft starter, VFD or another method</td><td>Changes the starting current and acceleration pattern</td></tr>
+            <tr><td>Acceleration time</td><td>Time taken to reach normal operating speed</td><td>A long start can cause thermal or magnetic operation</td></tr>
+            <tr><td>Duty and starts per hour</td><td>Continuous, intermittent, reversing, inching or frequent-start duty</td><td>Repeated starts can create heating that one-start calculations miss</td></tr>
+            <tr><td>Prospective fault current</td><td>Calculated fault current at the panel or feeder point</td><td>Must remain within the applicable breaking and coordination ratings</td></tr>
+            <tr><td>Contactor reference</td><td>Exact product, utilization category and coil voltage</td><td>Required for tested coordination and switching duty</td></tr>
+            <tr><td>Ambient conditions</td><td>Panel temperature, ventilation, altitude, dust and moisture</td><td>May affect thermal performance, reliability and derating</td></tr>
+            <tr><td>Cable data</td><td>Length, size, conductor material and installation method</td><td>Affects voltage drop, fault current and conductor protection</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Start with motor nameplate current</h2>
+        <p>The motor nameplate current at the actual supply voltage and connection is the most useful starting value. Avoid selecting the MPCB from motor kilowatts alone because motors with the same output can have different efficiencies, power factors, service factors and current values.</p>
+        <p>Shortlist an MPCB range that contains the nameplate current. The required setting should fall within a clear and usable part of the adjustment scale. Set the thermal adjustment according to the motor data, application conditions and the manufacturer’s instructions. Raising the setting only to suppress repeated trips can leave the motor under-protected.</p>
+
+        <h2>Check starting current, duty and fault level</h2>
+        <p>A motor can draw several times its running current while starting. The MPCB must distinguish this legitimate temporary current from a genuine short circuit or stalled condition. Direct-on-line starting may create a high inrush for a relatively short period. A high-inertia fan, loaded conveyor or pump starting after a long shutdown may accelerate more slowly.</p>
+        <p>Two motors with the same nameplate current can require different protection decisions if their operating duties are different. Record starts per hour, average run time, reversing or jogging requirements and the consequence of a trip.</p>
+        <p>The available fault current at the installation point must not exceed the applicable short-circuit rating of the selected device or the declared rating of the coordinated combination. Do not confuse the adjustable motor-current range with short-circuit breaking capacity.</p>
+
+        <h2>Coordination, ambient and a worked example</h2>
+        <p>An MPCB and contactor should be treated as a tested combination, not as two devices chosen independently by matching ampere labels. Use the exact MPCB and contactor references shown in the manufacturer’s tables. See <a href="../products/motor-control.html#contactors">contactors</a>.</p>
+        <p>Thermal protection is affected by the environment around the device. High panel temperature, restricted ventilation, closely packed heat-producing components, altitude and dust can reduce operating margins or require derating.</p>
+        <p>Worked workflow only: assume a motor nameplate shows 14.2 A at the intended supply voltage. Shortlist an MPCB range that includes 14.2 A, check starting method and acceleration time against the characteristic, calculate prospective fault current, then verify documented coordination for the exact MPCB-contactor combination. Cable size, voltage drop, ambient temperature and enclosure conditions still require project-specific review. <a href="../contact/index.html">Enquire</a> with the duty — no prices here.</p>
+
+        <h2>Frequently asked questions</h2>
+        <h3>Should an MPCB be set above the motor full-load current?</h3>
+        <p>The setting should follow the motor nameplate, application conditions and manufacturer instructions. Increasing it simply to stop trips can leave the motor under-protected.</p>
+        <h3>Can I select an MPCB only from motor kW?</h3>
+        <p>No. Motor kW can support an initial estimate, but the actual nameplate current, voltage, connection and duty are more reliable selection inputs.</p>
+        <h3>Does cable length affect MPCB selection?</h3>
+        <p>Yes. Cable impedance affects starting voltage drop and the fault current available at the motor end.</p>
+        <h3>Why is contactor coordination important?</h3>
+        <p>It confirms how the MPCB and contactor behave together during a fault. Similar current labels do not prove that two references are a tested combination.</p>
+        <h3>Can an MPCB be used without a contactor?</h3>
+        <p>Yes, where local manual switching is sufficient. Remote, automatic or frequent switching usually requires a suitable contactor.</p>
+
+        <h2>Final takeaway</h2>
+        <p>Select an MPCB from the motor nameplate current, but approve it only after checking starting behaviour, duty, fault level, cable conditions, ambient temperature and coordination with the contactor.</p>
+        <div class="btn-row">
+          <a class="btn" href="https://bchindia.com/blogs/how-to-select-mpcb-for-motor/">Read on bchindia.com →</a>
+          <a class="btn" href="index.html">All posts</a>
+          <a class="btn" href="../contact/index.html">Enquire</a>
+        </div>
+      </article>
+    </div>
+  </main>
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">BCH Electric</div>
+          <div class="footer-tagline">har haal mein</div>
+          <p>Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="../products/index.html">Catalogue hub</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../products/motor-starters.html">Motor starters</a>
+          <a href="../products/motor-control.html">Motor control</a>
+          <a href="../products/power-control.html">Power control</a>
+          <a href="../products/enclosures.html">Enclosures</a>
+          <a href="../support/download-center.html">Download Center</a>
+        </div>
+        <div class="footer-col">
+          <h5>Solutions</h5>
+          <a href="../solutions/index.html">Solutions hub</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../solutions/industries.html">Industries</a>
+          <a href="../solutions/applications.html">Applications</a>
+          <a href="../solutions/industries/agriculture.html">Agriculture</a>
+          <a href="../solutions/industries/mining.html">Mining</a>
+          <a href="../solutions/case-studies.html">Case studies</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="../support/index.html">Support</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../support/verify-product.html">Verify product</a>
+          <a href="../support/report-counterfeit.html">Counterfeit</a>
+          <a href="../support/download-center.html">Download Center</a>
+          <a href="../support/faqs.html">FAQ</a>
+          <a href="../support/customer-care.html">Customer care</a>
+          <a href="../support/sales-offices.html">Sales offices</a>
+          <a href="../support/find-a-dealer.html">Find a dealer</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../company/about.html">About</a>
+          <a href="../company/leadership.html">Leadership</a>
+          <a href="../company/manufacturing.html">Manufacturing &amp; R&amp;D</a>
+          <a href="../company/csr.html">CSR</a>
+          <a href="../company/certificates.html">Certificates</a>
+          <a href="../company/careers.html">Careers</a>
+          <a href="../company/investor.html">Investor relations</a>
+          <a href="../company/news.html">News</a>
+          <a href="index.html">Blog</a>
+          <a href="../company/media.html">Media</a>
+          <a href="../contact/index.html">Contact / Enquire</a>
+        </div>
+      </div>
+      <div class="footer-legal" aria-label="Legal and governance">
+        <a href="../legal/privacy.html">Privacy</a>
+        <a href="../legal/terms.html">Terms</a>
+        <a href="../legal/data-privacy.html">Data privacy</a>
+        <span class="footer-copy">© BCH Electric Limited 2026</span>
+        <a href="../company/public-notices.html">Public notices</a>
+        <a href="../company/careers.html">Careers</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© BCH Electric Limited · Wireframe IA v3</span>
+        <span>Grayscale · BrandClef</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../chrome.js"></script>
+  <script src="../feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reversing Contactor Electrical and Mechanical Interlocking — BCH Electric (Wireframe)</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-page="blog-post" data-page-title="Reversing Contactor Electrical and Mechanical Interlocking">
+  <div class="wf-banner">Wireframe · IA v3 · not final</div>
+  <div class="utility-bar" aria-label="Utility">
+    <nav class="lang-bar" aria-label="Language / view">
+      <button type="button" class="lang-opt" data-view="global">Global</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="hi">हिंदी</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt is-active" data-view="en" aria-pressed="true">English</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="de">Deutsch</button>
+    </nav>
+    <div class="util-right">
+      <a href="../products/selector.html">Product selector</a>
+      <a href="../support/find-a-dealer.html">Find a dealer</a>
+      <a href="../contact/index.html">Enquire</a>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-logo" href="../index.html">BCH<em>Electric</em></a>
+    <button type="button" class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="../products/index.html" data-nav="products">Products</a>
+      <a href="../solutions/index.html" data-nav="solutions">Solutions</a>
+      <a href="../support/index.html" data-nav="support">Support</a>
+      <a href="../company/about.html" data-nav="company" class="is-active">Company</a>
+      <a href="../contact/index.html" data-nav="contact">Contact</a>
+    </div>
+    <form class="nav-search" role="search" data-nav-search action="../search.html" method="get">
+      <label class="visually-hidden">Search</label>
+      <input type="search" name="q" placeholder="Search" aria-label="Search" />
+      <button type="submit">Search</button>
+    </form>
+    <a class="nav-cta" href="../support/download-center.html">Download Center</a>
+  </nav>
+  <main class="main">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Blog</a><span>/</span>Reversing Contactor Electrical and Mechanical Interlocking</div>
+      <header class="page-header">
+        <span class="section-label">From the live blog</span>
+        <h1>Reversing Contactor Electrical and Mechanical Interlocking</h1>
+        <p class="article-date">12 Aug 2026</p>
+      </header>
+      <blockquote class="article-pull">
+        <span class="section-label">Quick answer</span>
+        <p>A reversing starter changes motor direction by changing the phase sequence, typically by swapping two phases between the forward and reverse power paths. That makes interlocking fundamental to the circuit: if both contactors close together, the switching arrangement can create a phase-to-phase short circuit.</p>
+      </blockquote>
+      <article class="article-body">
+        <p>Before designing the interlock, select the contactor for the real motor duty. Start with the BCH <a href="../products/motor-control.html#contactors">contactor</a> family and confirm the utilisation category, current, coil/control requirements and mechanical-interlock compatibility. <a href="../contact/index.html">Enquire</a> for the duty — no prices on this site.</p>
+
+        <h2>The four interlock layers</h2>
+        <table>
+          <thead><tr><th>Layer</th><th>Function</th></tr></thead>
+          <tbody>
+            <tr><td>NC auxiliary-contact interlock</td><td>Prevents the opposite coil circuit from energising while one contactor is active.</td></tr>
+            <tr><td>Mechanical interlock</td><td>Physically prevents both contactors from reaching the closed position together.</td></tr>
+            <tr><td>Control logic</td><td>Enforces the forward/reverse command sequence and any required delay.</td></tr>
+            <tr><td>Feedback monitoring</td><td>Confirms whether a contactor actually changed state and can detect abnormal behaviour.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>How a forward-reverse contactor circuit works</h2>
+        <p>The forward contactor applies the normal phase sequence to the motor. The reverse contactor is wired so that two phases are interchanged. Only one power path should be active at any time. The control circuit therefore has to prevent a reverse command from energising the reverse coil while the forward contactor remains closed, and vice versa.</p>
+        <p>This is more than a software-sequencing problem. Wiring errors, welded contacts, failed outputs or mechanical faults can defeat a command sequence, which is why conventional reversing starters commonly use both electrical and mechanical interlocking.</p>
+        <h3>Electrical interlocking with normally closed auxiliary contacts</h3>
+        <p>Electrical interlocking is usually implemented by wiring a normally closed auxiliary contact from each contactor in series with the opposite coil circuit. When the forward contactor energises, its NC auxiliary contact opens the reverse-coil path. The interlock depends on the actual contactor state, not only the requested command.</p>
+        <h3>Mechanical interlocking between the contactors</h3>
+        <p>A compatible mechanical interlock adds a physical barrier. If one contactor is mechanically closed, the interlock prevents the opposite contactor from closing at the same time. Compatibility matters — use the manufacturer’s approved accessory for the exact product references.</p>
+        <h3>PLC logic is useful — but it is not the only barrier</h3>
+        <p>A PLC can enforce command order, add a reversal delay, supervise permissives and generate diagnostics. However, software delay alone can be defeated by output faults, wiring errors or welded contacts. Where the risk assessment requires prevention of simultaneous closure, retain the appropriate hardwired and mechanical barriers.</p>
+
+        <h2>Reversal delay and plug reversing</h2>
+        <p>The motor may need time to slow before the opposite contactor is allowed to close. Reversing a rotating motor can produce a much more severe electrical and mechanical duty than ordinary starting. Plug reversing at speed is a severe duty and can require AC-4 contactor selection. See <a href="contactor-ratings-ac1-ac3-ac4.html">Contactor Ratings Explained: AC1, AC3, AC4 Duty Cycles</a>.</p>
+
+        <h2>Select the contactor from the motor duty</h2>
+        <p>Record motor voltage, nameplate current, starting and reversing duty, starts or reversals per hour, acceleration time and load torque. These conditions determine whether the contactor is being asked to make, carry or interrupt current under a normal or severe switching duty. The contactors do not protect the motor circuit by themselves — review overload, short-circuit protective device, cable and motor together. See also <a href="mpcb-trip-settings-contactor-coordination.html">MPCB Trip Settings and Contactor Coordination Guide</a>.</p>
+
+        <h2>Frequently asked questions</h2>
+        <h3>Is a mechanical interlock enough for a reversing starter?</h3>
+        <p>For conventional reversing starters, both electrical and mechanical interlocking are recommended unless an approved design states otherwise. The two layers address different failure paths.</p>
+        <h3>Can a PLC delay replace auxiliary-contact interlocking?</h3>
+        <p>A PLC delay alone is not a complete substitute. Output faults, wiring errors or welded contacts can defeat a software-only sequence.</p>
+        <h3>Why is simultaneous forward and reverse contactor closure dangerous?</h3>
+        <p>The reverse power path swaps two phases. If the forward and reverse contactors close together, the circuit can create a phase-to-phase short circuit.</p>
+        <h3>Why might a reversing contactor need AC-4 selection?</h3>
+        <p>Plug reversing at speed is a severe switching duty. The actual motor current, torque, machine stress and expected contact life must be checked.</p>
+        <h3>Should the motor stop before the opposite contactor closes?</h3>
+        <p>The motor may need time to slow before reversal. The required delay depends on the machine and duty; it should be defined from the application rather than copied from a generic timer setting.</p>
+
+        <div class="btn-row">
+          <a class="btn" href="https://bchindia.com/blogs/reversing-contactor-interlocking/">Read on bchindia.com →</a>
+          <a class="btn" href="index.html">All posts</a>
+          <a class="btn" href="../contact/index.html">Enquire</a>
+        </div>
+      </article>
+    </div>
+  </main>
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">BCH Electric</div>
+          <div class="footer-tagline">har haal mein</div>
+          <p>Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="../products/index.html">Catalogue hub</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../products/motor-starters.html">Motor starters</a>
+          <a href="../products/motor-control.html">Motor control</a>
+          <a href="../products/power-control.html">Power control</a>
+          <a href="../products/enclosures.html">Enclosures</a>
+          <a href="../support/download-center.html">Download Center</a>
+        </div>
+        <div class="footer-col">
+          <h5>Solutions</h5>
+          <a href="../solutions/index.html">Solutions hub</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../solutions/industries.html">Industries</a>
+          <a href="../solutions/applications.html">Applications</a>
+          <a href="../solutions/industries/agriculture.html">Agriculture</a>
+          <a href="../solutions/industries/mining.html">Mining</a>
+          <a href="../solutions/case-studies.html">Case studies</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="../support/index.html">Support</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../support/verify-product.html">Verify product</a>
+          <a href="../support/report-counterfeit.html">Counterfeit</a>
+          <a href="../support/download-center.html">Download Center</a>
+          <a href="../support/faqs.html">FAQ</a>
+          <a href="../support/customer-care.html">Customer care</a>
+          <a href="../support/sales-offices.html">Sales offices</a>
+          <a href="../support/find-a-dealer.html">Find a dealer</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../company/about.html">About</a>
+          <a href="../company/leadership.html">Leadership</a>
+          <a href="../company/manufacturing.html">Manufacturing &amp; R&amp;D</a>
+          <a href="../company/csr.html">CSR</a>
+          <a href="../company/certificates.html">Certificates</a>
+          <a href="../company/careers.html">Careers</a>
+          <a href="../company/investor.html">Investor relations</a>
+          <a href="../company/news.html">News</a>
+          <a href="index.html">Blog</a>
+          <a href="../company/media.html">Media</a>
+          <a href="../contact/index.html">Contact / Enquire</a>
+        </div>
+      </div>
+      <div class="footer-legal" aria-label="Legal and governance">
+        <a href="../legal/privacy.html">Privacy</a>
+        <a href="../legal/terms.html">Terms</a>
+        <a href="../legal/data-privacy.html">Data privacy</a>
+        <span class="footer-copy">© BCH Electric Limited 2026</span>
+        <a href="../company/public-notices.html">Public notices</a>
+        <a href="../company/careers.html">Careers</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© BCH Electric Limited · Wireframe IA v3</span>
+        <span>Grayscale · BrandClef</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../chrome.js"></script>
+  <script src="../feedback.js"></script>
+</body>
+</html>

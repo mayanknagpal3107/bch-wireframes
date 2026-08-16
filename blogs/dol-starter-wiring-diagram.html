@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOL starter wiring diagram and sequence of operation explained — BCH Electric (Wireframe)</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-page="blog-post" data-page-title="DOL starter wiring diagram and sequence of operation explained">
+  <div class="wf-banner">Wireframe · IA v3 · not final</div>
+  <div class="utility-bar" aria-label="Utility">
+    <nav class="lang-bar" aria-label="Language / view">
+      <button type="button" class="lang-opt" data-view="global">Global</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="hi">हिंदी</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt is-active" data-view="en" aria-pressed="true">English</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="de">Deutsch</button>
+    </nav>
+    <div class="util-right">
+      <a href="../products/selector.html">Product selector</a>
+      <a href="../support/find-a-dealer.html">Find a dealer</a>
+      <a href="../contact/index.html">Enquire</a>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-logo" href="../index.html">BCH<em>Electric</em></a>
+    <button type="button" class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="../products/index.html" data-nav="products">Products</a>
+      <a href="../solutions/index.html" data-nav="solutions">Solutions</a>
+      <a href="../support/index.html" data-nav="support">Support</a>
+      <a href="../company/about.html" data-nav="company" class="is-active">Company</a>
+      <a href="../contact/index.html" data-nav="contact">Contact</a>
+    </div>
+    <form class="nav-search" role="search" data-nav-search action="../search.html" method="get">
+      <label class="visually-hidden">Search</label>
+      <input type="search" name="q" placeholder="Search" aria-label="Search" />
+      <button type="submit">Search</button>
+    </form>
+    <a class="nav-cta" href="../support/download-center.html">Download Center</a>
+  </nav>
+  <main class="main">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Blog</a><span>/</span>DOL starter wiring diagram and sequence of operation explained</div>
+      <header class="page-header">
+        <span class="section-label">From the live blog</span>
+        <h1>DOL starter wiring diagram and sequence of operation explained</h1>
+        <p class="article-date">8 Jul 2026</p>
+      </header>
+      <blockquote class="article-pull">
+        <span class="section-label">Quick answer</span>
+        <p>A DOL starter starts a motor by applying full line voltage directly to the motor terminals. When the start push button is pressed, the contactor coil is energized. The contactor closes its main contacts, the motor receives supply and starts running. An auxiliary contact keeps the coil energized after the start button is released. If the stop button is pressed or the overload relay trips, the coil circuit opens, the contactor drops out and the motor stops.</p>
+      </blockquote>
+      <article class="article-body">
+        <p>In a practical panel, the DOL starter is usually reviewed along with motor full-load current, coil voltage, overload relay range, short-circuit protection, enclosure type, number of starts per hour and site conditions.</p>
+        <p>For product selection, see BCH <a href="../products/motor-starters.html">motor starters</a>. If you are still comparing starter types, start there — then <a href="../contact/index.html">enquire</a>. No prices on this site.</p>
+
+        <h2>What is a DOL starter?</h2>
+        <p>A DOL starter is a motor starter that connects the motor directly across the supply line during starting. Because the motor receives full voltage immediately, the starting current is high compared with normal running current. That is why DOL starters are generally used where the motor, supply system and driven load can handle direct starting.</p>
+        <p>A basic DOL starter includes:</p>
+        <ul>
+          <li>A contactor for switching the motor supply</li>
+          <li>An overload relay for motor overload protection</li>
+          <li>Start and stop push buttons for control</li>
+          <li>Auxiliary contact for holding the circuit</li>
+          <li>Short-circuit protection through an MPCB, fuse or breaker as per panel design</li>
+          <li>Enclosure, terminals and wiring accessories depending on the installation</li>
+        </ul>
+        <p>The starter does not reduce starting current like a star-delta starter, soft starter or drive. Its job is to provide simple, direct motor starting with safe control and protection.</p>
+
+        <h2>Main parts in a DOL starter wiring diagram</h2>
+        <p>A DOL starter wiring diagram normally has two sections: the power circuit and the control circuit.</p>
+        <h3>Power circuit</h3>
+        <p>The power circuit carries the motor current. It usually includes the incoming supply, short-circuit protection, contactor main contacts, overload relay and motor terminals.</p>
+        <p>Supply enters the starter panel. It passes through short-circuit protection such as an MPCB, fuse or breaker. From there, it goes through the contactor main contacts. The output then passes through the overload relay before reaching the motor terminals. When the contactor closes, the motor receives full voltage. When the contactor opens, the motor is disconnected from the supply.</p>
+        <p>Related ranges: <a href="../products/motor-control.html#mpcb">MPCB</a>, <a href="../products/motor-control.html#contactors">contactors</a> and <a href="../products/motor-control.html#olr">overload relays</a>. These devices are often selected together because the starter must protect the motor as a complete system.</p>
+        <h3>Control circuit</h3>
+        <p>The control circuit carries lower control current and decides when the contactor should energize or drop out. A typical control circuit includes a normally closed stop push button, a normally open start push button, the contactor coil, a normally closed overload trip contact, an auxiliary contact for self-holding, and a control supply based on the selected coil voltage.</p>
+        <p>When the start push button is pressed, current flows through the stop button, overload contact and start button to energize the contactor coil. Once the contactor closes, its auxiliary contact creates a parallel holding path around the start button. When the stop button is pressed, or when the overload relay trips, the control circuit opens. The contactor coil de-energizes, the main contacts open and the motor stops.</p>
+
+        <h2>Sequence of operation in a DOL starter</h2>
+        <p>A DOL starter works in a clear sequence. Understanding this sequence helps during wiring review, commissioning and troubleshooting.</p>
+        <h3>Supply is available</h3>
+        <p>The incoming supply is available at the starter input. The motor is still off because the contactor main contacts are open. The control circuit is ready, provided the stop button and overload relay trip contact are closed. At this stage, the panel should be checked for correct supply voltage, proper earthing, correct control voltage and secure terminal connections.</p>
+        <h3>Start button is pressed</h3>
+        <p>When the operator presses the start button, the control circuit becomes complete. Current reaches the contactor coil. The coil creates a magnetic field and pulls the contactor mechanism in. This closes the main power contacts.</p>
+        <h3>Motor receives full line voltage</h3>
+        <p>Once the contactor main contacts close, the motor is connected directly to the supply. The motor draws high starting current for a short time and accelerates toward rated speed. The starting current must be acceptable for the motor, cable, protection device and supply system.</p>
+        <h3>Holding contact keeps the motor running</h3>
+        <p>After the start button is released, the auxiliary contact keeps the contactor coil energized. This is called the holding circuit or seal-in circuit. Without this auxiliary contact, the motor would run only while the start button is physically pressed.</p>
+        <h3>Motor runs under normal load</h3>
+        <p>During normal running, the overload relay monitors current. If the motor current stays within the set range, the starter continues to run. The overload relay setting should be based on the motor full-load current shown on the nameplate and the applicable design practice.</p>
+        <h3>Stop button or overload trip opens the circuit</h3>
+        <p>When the stop button is pressed, the control circuit opens and the contactor coil loses supply. The main contacts open and the motor stops. If the motor draws excess current for too long, the overload relay trips. This also opens the coil circuit and stops the motor. The cause should be checked before resetting the starter.</p>
+
+        <h2>Where DOL starters are commonly used</h2>
+        <p>DOL starters are commonly used for motors where direct starting is acceptable and the starting current does not create a problem for the supply or driven equipment.</p>
+        <ul>
+          <li>Pumps</li>
+          <li>Fans and blowers</li>
+          <li>Compressors</li>
+          <li>Conveyors</li>
+          <li>Small and medium industrial machinery</li>
+          <li>Agricultural motor applications</li>
+          <li>General motor-control panels</li>
+        </ul>
+        <p>For pump applications, the starter selection should also consider starting frequency, dry-run risk, voltage fluctuation, site environment and maintenance access.</p>
+
+        <h2>When a DOL starter may not be the right choice</h2>
+        <p>A DOL starter is simple and dependable when used correctly, but it is not suitable for every motor. It may not be the best choice when:</p>
+        <ul>
+          <li>The motor rating is too high for direct starting on the available supply</li>
+          <li>The driven load cannot handle sudden starting torque</li>
+          <li>The site has frequent starts and stops</li>
+          <li>The supply system is weak or sensitive to voltage dips</li>
+          <li>The application needs controlled acceleration or deceleration</li>
+          <li>The motor needs advanced protection or monitoring</li>
+        </ul>
+        <p>In such cases, compare DOL with other starter types on the <a href="../products/motor-starters.html">motor starters</a> hub, or read <a href="choosing-star-delta-starter.html">Choosing Star-Delta Starter for Industrial Motors</a>.</p>
+
+        <h2>How to select a DOL starter</h2>
+        <p>A DOL starter should not be selected only by a current rating printed in a catalogue. The rating matters, but the application decides whether the selection will work reliably.</p>
+        <h3>Motor rating and full-load current</h3>
+        <p>Start with the motor nameplate. Note the HP or kW rating, voltage, phase, frequency and full-load current. The overload relay range should suit the motor full-load current.</p>
+        <h3>Supply and control voltage</h3>
+        <p>Confirm the supply voltage and the control voltage. The contactor coil voltage must match the control circuit. A wrong coil voltage can cause failure, chatter or non-operation.</p>
+        <h3>Starting frequency</h3>
+        <p>Check how often the motor starts in one hour. Frequent starting creates heat and mechanical stress. This affects starter selection, contactor life and overload behavior.</p>
+        <h3>Load type</h3>
+        <p>A pump, compressor, conveyor and fan do not behave the same way during starting. The driven load affects starting current duration, acceleration time and mechanical stress.</p>
+        <h3>Short-circuit protection</h3>
+        <p>The starter should be coordinated with the correct short-circuit protection. Depending on the design, this may involve an MPCB, fuse or breaker.</p>
+        <h3>Overload relay setting</h3>
+        <p>The overload relay should be set according to the motor full-load current and verified as per the applicable design requirement. A wrong setting can cause nuisance tripping or fail to protect the motor.</p>
+        <h3>Enclosure and site conditions</h3>
+        <p>Dust, moisture, heat, vibration, panel space and cable routing can all affect the final selection. A starter that works in a clean indoor panel may not be suitable for a pump house, dusty plant area or high-temperature installation.</p>
+        <p>Share the duty through <a href="../contact/index.html">Contact / Enquire</a> — we do not publish SKU prices here.</p>
+
+        <h2>Common mistakes in DOL starter selection</h2>
+        <p>Many DOL starter problems are not caused by the starter itself. They usually come from incomplete selection, poor wiring, wrong settings or weak commissioning checks.</p>
+        <ul>
+          <li>Choosing the starter only by motor HP</li>
+          <li>Ignoring motor full-load current</li>
+          <li>Selecting the wrong contactor coil voltage</li>
+          <li>Setting the overload relay too high or too low</li>
+          <li>Ignoring starting frequency</li>
+          <li>Using weak or loose control wiring</li>
+          <li>Ignoring phase loss or voltage imbalance</li>
+          <li>Not checking panel ventilation and ambient temperature</li>
+          <li>Treating pump applications like general machinery applications</li>
+          <li>Replacing parts before checking the root cause of repeated trips</li>
+        </ul>
+
+        <h2>Practical field checklist before final selection</h2>
+        <p>Before approving a DOL starter, collect these details:</p>
+        <ul>
+          <li>Motor HP or kW</li>
+          <li>Motor full-load current</li>
+          <li>Supply voltage and phase</li>
+          <li>Control voltage</li>
+          <li>Application type</li>
+          <li>Load behavior during starting</li>
+          <li>Number of starts per hour</li>
+          <li>Pump-specific conditions, if applicable</li>
+          <li>Ambient temperature</li>
+          <li>Panel space and enclosure requirement</li>
+          <li>Cable size and routing</li>
+          <li>Protection device requirement</li>
+          <li>Overload relay range</li>
+          <li>Maintenance access</li>
+          <li>Any history of nuisance trips or motor failure</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+        <h3>What is a DOL starter used for?</h3>
+        <p>A DOL starter is used to start and stop an induction motor by connecting it directly to the supply. It is commonly used for pumps, fans, compressors, conveyors and machinery where direct starting is acceptable.</p>
+        <h3>How does a DOL starter work?</h3>
+        <p>When the start button is pressed, the contactor coil energizes and closes the main contacts. The motor receives full supply voltage and starts. An auxiliary contact keeps the coil energized. When the stop button is pressed or the overload relay trips, the coil circuit opens and the motor stops.</p>
+        <h3>What are the main parts of a DOL starter?</h3>
+        <p>The main parts are the contactor, overload relay, start push button, stop push button, auxiliary contact, short-circuit protection and enclosure. The exact arrangement depends on the panel design and application.</p>
+        <h3>Can a DOL starter be selected only by motor HP?</h3>
+        <p>No. Motor HP or kW is only the starting point. The final selection should also check full-load current, supply voltage, control voltage, overload relay range, starting frequency, site conditions and protection coordination.</p>
+        <h3>Why does a DOL starter trip repeatedly?</h3>
+        <p>Repeated tripping can happen because of overload, wrong overload setting, phase loss, voltage imbalance, mechanical load problems, loose wiring, high ambient temperature or a starter selected below the actual duty requirement.</p>
+        <h3>Is a DOL starter suitable for pumps?</h3>
+        <p>Yes, DOL starters are commonly used for pump applications when the motor and supply can handle direct starting. Pump-specific conditions such as dry-run risk, voltage fluctuation, frequent starts and site environment should be reviewed before selection.</p>
+        <h3>When should I contact BCH for support?</h3>
+        <p>Contact BCH when the motor duty is unclear, the site has frequent starting, pump-specific conditions, high ambient temperature, tight panel space, voltage fluctuation or repeated nuisance trips. Share the motor rating, full-load current, supply voltage, control voltage, application and site conditions through <a href="../contact/index.html">Contact / Enquire</a>.</p>
+
+        <h2>Final takeaway</h2>
+        <p>A DOL starter is simple only when the application is simple. For a reliable installation, the wiring diagram, control sequence, contactor, overload relay, short-circuit protection and motor duty must be reviewed together.</p>
+        <p>Start with the motor nameplate and site condition. Then confirm the control voltage, overload range, protection device, number of starts per hour and enclosure requirement. After that, compare the right BCH DOL starter option for the actual installation instead of choosing only by motor rating.</p>
+        <div class="btn-row">
+          <a class="btn" href="https://bchindia.com/blogs/dol-starter-wiring-diagram-and-sequence-of-operation-explained/">Read on bchindia.com →</a>
+          <a class="btn" href="index.html">All posts</a>
+          <a class="btn" href="../contact/index.html">Enquire</a>
+        </div>
+      </article>
+      <section class="article-related">
+        <span class="section-label">Related</span>
+        <h2>Related articles</h2>
+        <div class="grid-3">
+          <a class="card" href="reversing-contactor-interlocking.html"><div class="ph ph-card">Article</div><div class="body"><h3>Reversing Contactor Electrical and Mechanical Interlocking</h3><span class="arrow">Read →</span></div></a>
+          <a class="card" href="how-to-select-mpcb-for-motor.html"><div class="ph ph-card">Article</div><div class="body"><h3>How to Select an MPCB by Motor Current and Duty</h3><span class="arrow">Read →</span></div></a>
+          <a class="card" href="choosing-star-delta-starter.html"><div class="ph ph-card">Article</div><div class="body"><h3>Choosing Star-Delta Starter for Industrial Motors: A Buyer’s Guide</h3><span class="arrow">Read →</span></div></a>
+        </div>
+      </section>
+    </div>
+  </main>
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">BCH Electric</div>
+          <div class="footer-tagline">har haal mein</div>
+          <p>Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="../products/index.html">Catalogue hub</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../products/motor-starters.html">Motor starters</a>
+          <a href="../products/motor-control.html">Motor control</a>
+          <a href="../products/power-control.html">Power control</a>
+          <a href="../products/enclosures.html">Enclosures</a>
+          <a href="../support/download-center.html">Download Center</a>
+        </div>
+        <div class="footer-col">
+          <h5>Solutions</h5>
+          <a href="../solutions/index.html">Solutions hub</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../solutions/industries.html">Industries</a>
+          <a href="../solutions/applications.html">Applications</a>
+          <a href="../solutions/industries/agriculture.html">Agriculture</a>
+          <a href="../solutions/industries/mining.html">Mining</a>
+          <a href="../solutions/case-studies.html">Case studies</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="../support/index.html">Support</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../support/verify-product.html">Verify product</a>
+          <a href="../support/report-counterfeit.html">Counterfeit</a>
+          <a href="../support/download-center.html">Download Center</a>
+          <a href="../support/faqs.html">FAQ</a>
+          <a href="../support/customer-care.html">Customer care</a>
+          <a href="../support/sales-offices.html">Sales offices</a>
+          <a href="../support/find-a-dealer.html">Find a dealer</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../company/about.html">About</a>
+          <a href="../company/leadership.html">Leadership</a>
+          <a href="../company/manufacturing.html">Manufacturing &amp; R&amp;D</a>
+          <a href="../company/csr.html">CSR</a>
+          <a href="../company/certificates.html">Certificates</a>
+          <a href="../company/careers.html">Careers</a>
+          <a href="../company/investor.html">Investor relations</a>
+          <a href="../company/news.html">News</a>
+          <a href="index.html">Blog</a>
+          <a href="../company/media.html">Media</a>
+          <a href="../contact/index.html">Contact / Enquire</a>
+        </div>
+      </div>
+      <div class="footer-legal" aria-label="Legal and governance">
+        <a href="../legal/privacy.html">Privacy</a>
+        <a href="../legal/terms.html">Terms</a>
+        <a href="../legal/data-privacy.html">Data privacy</a>
+        <span class="footer-copy">© BCH Electric Limited 2026</span>
+        <a href="../company/public-notices.html">Public notices</a>
+        <a href="../company/careers.html">Careers</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© BCH Electric Limited · Wireframe IA v3</span>
+        <span>Grayscale · BrandClef</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../chrome.js"></script>
+  <script src="../feedback.js"></script>
+</body>
+</html>

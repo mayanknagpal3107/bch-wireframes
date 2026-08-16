@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sales offices — BCH Electric (Wireframe)</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-page="sales-offices" data-page-title="Sales offices">
+  <div class="wf-banner">Wireframe · IA v3 · not final</div>
+  <div class="utility-bar" aria-label="Utility">
+    <nav class="lang-bar" aria-label="Language / view">
+      <button type="button" class="lang-opt" data-view="global">Global</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="hi">हिंदी</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt is-active" data-view="en" aria-pressed="true">English</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="de">Deutsch</button>
+    </nav>
+    <div class="util-right">
+      <a href="../products/selector.html">Product selector</a>
+      <a href="find-a-dealer.html">Find a dealer</a>
+      <a href="../contact/index.html">Enquire</a>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-logo" href="../index.html">BCH<em>Electric</em></a>
+    <button type="button" class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="../products/index.html" data-nav="products">Products</a>
+      <a href="../solutions/index.html" data-nav="solutions">Solutions</a>
+      <a href="index.html" data-nav="support" class="is-active">Support</a>
+      <a href="../company/about.html" data-nav="company">Company</a>
+      <a href="../contact/index.html" data-nav="contact">Contact</a>
+    </div>
+    <form class="nav-search" role="search" data-nav-search action="../search.html" method="get">
+      <label class="visually-hidden">Search</label>
+      <input type="search" name="q" placeholder="Search" aria-label="Search" />
+      <button type="submit">Search</button>
+    </form>
+    <a class="nav-cta" href="download-center.html">Download Center</a>
+  </nav>
+  <main class="main">
+
+        <div class="container">
+      <header class="page-header">
+        <span class="section-label">Network</span>
+        <h1>Sales offices</h1>
+        <p class="lead">Live branch list from <span class="mono">bchindia.com/sales-offices/</span> — 24 offices. Names, addresses, phones and emails as published. No invented locations.</p>
+      </header>
+            <section id="nearest-support" class="nearest-support" aria-label="Nearest support">
+        <form data-wireframe-form data-nearest-form novalidate>
+          <span class="section-label">Support near you</span>
+          <h2>Where do you need support?</h2>
+          <p class="lead">Pick a state and city to see who can help for support. Matching offices are highlighted below.</p>
+          <div class="form-grid ns-grid">
+            <div class="field"><label for="ns-state">State</label>
+              <select id="ns-state" name="state"><option value="">Select state</option></select></div>
+            <div class="field"><label for="ns-city">City</label>
+              <select id="ns-city" name="city" disabled><option value="">Select city</option></select></div>
+          </div>
+          <div class="btn-row"><button type="submit" class="btn btn-fill">Find support</button></div>
+          <div class="form-note" hidden></div>
+        </form>
+        <div id="ns-results" class="ns-results" hidden></div>
+        <p class="helpline-meta">Helpline <strong>1800 103 9262</strong> · <a href="mailto:customercare@bchindia.com">customercare@bchindia.com</a></p>
+      </section>
+
+      <section class="section-tight">
+        <div class="dot-map" aria-label="Sales offices on one map">
+          <div class="dot-map-field">
+            <span class="dot-map-kicker">India · 24 offices</span>
+            <span class="map-dot r-n" style="left:48%;top:28%" title="Delhi"><i></i><em>Delhi</em></span><span class="map-dot r-n" style="left:50%;top:32%" title="Faridabad"><i></i><em>Faridabad</em></span><span class="map-dot r-n" style="left:46%;top:22%" title="Chandigarh"><i></i><em>Chandigarh</em></span><span class="map-dot r-n" style="left:44%;top:24%" title="Ludhiana"><i></i><em>Ludhiana</em></span><span class="map-dot r-n" style="left:52%;top:24%" title="Dehradun"><i></i><em>Dehradun</em></span><span class="map-dot r-n" style="left:40%;top:34%" title="Jaipur"><i></i><em>Jaipur</em></span><span class="map-dot r-n" style="left:56%;top:34%" title="Lucknow"><i></i><em>Lucknow</em></span><span class="map-dot r-w" style="left:32%;top:42%" title="Ahmedabad"><i></i><em>Ahmedabad</em></span><span class="map-dot r-w" style="left:34%;top:46%" title="Vadodara"><i></i><em>Vadodara</em></span><span class="map-dot r-w" style="left:30%;top:52%" title="Mumbai"><i></i><em>Mumbai</em></span><span class="map-dot r-w" style="left:34%;top:56%" title="Pune"><i></i><em>Pune</em></span><span class="map-dot r-w" style="left:40%;top:44%" title="Indore"><i></i><em>Indore</em></span><span class="map-dot r-w" style="left:52%;top:50%" title="Raipur"><i></i><em>Raipur</em></span><span class="map-dot r-s" style="left:42%;top:72%" title="Bangalore"><i></i><em>Bangalore</em></span><span class="map-dot r-s" style="left:50%;top:74%" title="Chennai"><i></i><em>Chennai</em></span><span class="map-dot r-s" style="left:40%;top:76%" title="Coimbatore"><i></i><em>Coimbatore</em></span><span class="map-dot r-s" style="left:46%;top:62%" title="Hyderabad"><i></i><em>Hyderabad</em></span><span class="map-dot r-s" style="left:46%;top:78%" title="Trichy"><i></i><em>Trichy</em></span><span class="map-dot r-s" style="left:44%;top:82%" title="Madurai"><i></i><em>Madurai</em></span><span class="map-dot r-e" style="left:68%;top:44%" title="Kolkata"><i></i><em>Kolkata</em></span><span class="map-dot r-e" style="left:64%;top:52%" title="Bhubaneswar"><i></i><em>Bhubaneswar</em></span><span class="map-dot r-e" style="left:62%;top:46%" title="Jamshedpur"><i></i><em>Jamshedpur</em></span><span class="map-dot r-e" style="left:62%;top:38%" title="Patna"><i></i><em>Patna</em></span>
+          </div>
+          <div class="dealer-legend">
+            <span>North</span>
+            <span>West</span>
+            <span>South</span>
+            <span>East</span>
+          </div>
+        </div>
+      </section>
+      <section class="section section-border">
+        <details class="wf-acc" open>
+          <summary>NORTH · 8</summary>
+          <div class="wf-acc-body"><div class="office-grid mt-12"><article class="office-card"><span class="tag">North</span><h3>Delhi 1</h3><address>801, Akash Deep Building, 26A, Barakhamba Road, New Delhi – 110 001</address><div class="tel">011-23313878 / 66307065</div><div class="email"><a href="mailto:delhi@bchindia.com">delhi@bchindia.com</a></div></article><article class="office-card"><span class="tag">North</span><h3>Delhi 2</h3><address>701 Deepali Building, 92 Nehru Place, New Delhi- 110019</address><div class="tel">011-45720334</div><div class="email"><a href="mailto:delhi2@bchindia.com">delhi2@bchindia.com</a></div></article><article class="office-card"><span class="tag">North</span><h3>Chandigarh</h3><address>SCO-270, 2nd Floor, Sector-16, Panchkula, Haryana - 134113</address><div class="tel">0172-5078957 / 5049905</div><div class="email"><a href="mailto:chandigarh@bchindia.com">chandigarh@bchindia.com</a></div></article><article class="office-card"><span class="tag">North</span><h3>Faridabad</h3><address>20/4, Mathura Road, Faridabad – 121 006 (Haryana)</address><div class="tel">0129-2304016</div><div class="email"><a href="mailto:faridabad@bchindia.com">faridabad@bchindia.com</a></div></article><article class="office-card"><span class="tag">North</span><h3>Dehradun</h3><address>Plot No. 8, Co-Operative Industrial Estate, Patel Nagar, Dehradun - 248 001</address><div class="email"><a href="mailto:dehradun@bchindia.com">dehradun@bchindia.com</a></div></article><article class="office-card"><span class="tag">North</span><h3>Jaipur</h3><address>25, Hathroi, Gopalbari, Jaipur – 302 001</address><div class="tel">0141-5104521</div><div class="email"><a href="mailto:jaipur@bchindia.com">jaipur@bchindia.com</a></div></article><article class="office-card"><span class="tag">North</span><h3>Lucknow</h3><address>Shop No. 3, First Floor, Tower T-10, Millennium Place IBB - 2, Sushant Golf City, Sultanpur Road, Lucknow U.P. - 226030</address><div class="tel">0522-4025597 / 4025997</div><div class="email"><a href="mailto:lucknow@bchindia.com">lucknow@bchindia.com</a></div></article><article class="office-card"><span class="tag">North</span><h3>Ludhiana</h3><address>S.C.O.- 18, 2nd Floor, Feroze Gandhi Market, Ludhiana – 140 001</address><div class="tel">0161-5021807 / 5022808</div><div class="email"><a href="mailto:ludhiana@bchindia.com">ludhiana@bchindia.com</a></div></article></div></div>
+        </details>
+        <details class="wf-acc">
+          <summary>WEST · 6</summary>
+          <div class="wf-acc-body"><div class="office-grid mt-12"><article class="office-card"><span class="tag">West</span><h3>Ahmedabad</h3><address>401, Shilp Zeveri, Beside Shyamal iconic, Above Westside, Shyamal Cross Road, Ellisbridge, Ahmedabad - 380015</address><div class="tel">079 46047740, 9909909249</div><div class="email"><a href="mailto:ahmedabad@bchindia.com">ahmedabad@bchindia.com</a></div></article><article class="office-card"><span class="tag">West</span><h3>Vadodara</h3><address>301, Third Floor, “Florence Classic”, 10, Ashapuri Co-Op. Hsg. Soc. Ltd., Opp. VUDA Housing, Near Cow Circle, Akota, Vadodara (Gujarat) – 390 020</address><div class="tel">+91-265-6548444 / 2345068 / 2345069</div><div class="email"><a href="mailto:vadodara@bchindia.com">vadodara@bchindia.com</a></div></article><article class="office-card"><span class="tag">West</span><h3>Indore</h3><address>330-331, Indraprastha Tower, 3rd Floor, 6, M.G. Road, Indore – 452 001</address><div class="tel">0731-2510011</div><div class="email"><a href="mailto:indore@bchindia.com">indore@bchindia.com</a></div></article><article class="office-card"><span class="tag">West</span><h3>Mumbai</h3><address>A-151, Mittal Tower, Nariman Point, Mumbai – 400 021</address><div class="tel">022-22822947 / 22850162</div><div class="email"><a href="mailto:mumbai@bchindia.com">mumbai@bchindia.com</a></div></article><article class="office-card"><span class="tag">West</span><h3>Pune</h3><address>S. No. – 38/4A/1FP Flat No.-A, 605 Kumar Surabhi Building, Opposite Sai Baba Mandir, Satara Road – Pune Maharashtra - 411009</address><div class="tel">9890012945</div><div class="email"><a href="mailto:pune@bchindia.com">pune@bchindia.com</a></div></article><article class="office-card"><span class="tag">West</span><h3>Raipur</h3><address>6th Floor, Office No-607, Babylon Capital Near Oswal Petrol Pump, VIP Chowk, G.E. Road, Raipur (C.G.) – 492006</address><div class="tel">0771-4020213 / 0771-4045053</div><div class="email"><a href="mailto:raipur@bchindia.com">raipur@bchindia.com</a></div></article></div></div>
+        </details>
+        <details class="wf-acc">
+          <summary>SOUTH · 6</summary>
+          <div class="wf-acc-body"><div class="office-grid mt-12"><article class="office-card"><span class="tag">South</span><h3>Bangalore</h3><address>130/5, 2nd Floor KH Road (Double road) Behind GK Printers, Bangalore - 560027</address><div class="tel">9845594079, 08022236759</div><div class="email"><a href="mailto:bangalore@bchindia.com">bangalore@bchindia.com</a></div></article><article class="office-card"><span class="tag">South</span><h3>Chennai</h3><address>Flat No: 3A, 3rd Floor Sree Apartments, No: 508 TTK Road, Alwarpet, Chennai – 600 018</address><div class="tel">044-24337046 / 24337047</div><div class="email"><a href="mailto:chennai@bchindia.com">chennai@bchindia.com</a></div></article><article class="office-card"><span class="tag">South</span><h3>Coimbatore</h3><address>87, Dr. Nanjappa Road, Coimbatore – 641 018</address><div class="tel">0422-2305311</div><div class="email"><a href="mailto:coimbatore@bchindia.com">coimbatore@bchindia.com</a></div></article><article class="office-card"><span class="tag">South</span><h3>Trichy</h3><address>2B, Kannagi Street, Ayyappa Nagar, K.K. Nagar, Trichy – 620021, Tamil Nadu</address><div class="tel">0431-4040497</div><div class="email"><a href="mailto:trichy@bchindia.com">trichy@bchindia.com</a></div></article><article class="office-card"><span class="tag">South</span><h3>Madurai</h3><address>12, Parvathi Plaza-3rd Floor, 70 Feet Road, Ellis Nagar Madurai-625016 Tamil Nadu</address><div class="email"><a href="mailto:madurai@bchindia.com">madurai@bchindia.com</a></div></article><article class="office-card"><span class="tag">South</span><h3>Hyderabad</h3><address>1-8-303/48/13/102, Arya One, 2nd Floor, P. G. Road, Secunderabad – 500 003</address><div class="tel">040-66206263 / 27890306</div><div class="email"><a href="mailto:hyderabad@bchindia.com">hyderabad@bchindia.com</a></div></article></div></div>
+        </details>
+        <details class="wf-acc">
+          <summary>EAST · 4</summary>
+          <div class="wf-acc-body"><div class="office-grid mt-12"><article class="office-card"><span class="tag">East</span><h3>Bhubaneswar</h3><address>Mallick Commercial Complex Plot No. - A/67, Unit - 3 Bhubaneswar - 751 001</address><div class="tel">0674-2380988</div><div class="email"><a href="mailto:bhubaneswar@bchindia.com">bhubaneswar@bchindia.com</a></div></article><article class="office-card"><span class="tag">East</span><h3>Jamshedpur</h3><address>A.J. Tower 2B, 2nd Floor R-Road, Bistupur Jamshedpur-831001</address><div class="tel">0657-2321097 / 2321481</div><div class="email"><a href="mailto:jamshedpur@bchindia.com">jamshedpur@bchindia.com</a></div></article><article class="office-card"><span class="tag">East</span><h3>Kolkata</h3><address>Block 1E, 1st Floor 216, A.J.C Bose Road, Kolkata (West Bengal)-700017</address><div class="tel">033-22871728</div><div class="email"><a href="mailto:kolkata@bchindia.com">kolkata@bchindia.com</a></div></article><article class="office-card"><span class="tag">East</span><h3>Patna</h3><address>No. 703, Seventh Floor, Luv – Kush Tower, Exhibition Road, Patna, Bihar - 800001</address></article></div></div>
+        </details>
+      </section>
+      <section class="section section-border">
+        <span class="section-label">Other branch / resident engineer locations</span>
+        <h2 class="mb-16">Cities listed on the live page</h2>
+        <p class="lead">Baddi, Bardhman, Bhilai, Bhiwadi, Bhopal, Durgapur, Gwalior, Haldwani, Haridwar, Jalandhar, Korba, Kota, Muzaffarnagar, Mysore, Nashik, NaviMumbai, Nagpur, Patna, Puducherry, Rajkot, Rajahmundry, Ranchi, Rourkela, Solapur, Salem, Thiruvananthapuram, Udaipur, Varanasi, Warangal</p>
+        <p class="photo-note">City names only — the live page does not publish street addresses for resident-engineer locations.</p>
+        <div class="btn-row" style="margin-top:0;">
+          <a class="btn btn-fill" href="find-a-dealer.html">Find a dealer</a>
+          <a class="btn" href="../contact/index.html">Enquire →</a>
+        </div>
+      </section>
+    </div>
+
+  
+
+  </main>
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">BCH Electric</div>
+          <div class="footer-tagline">har haal mein</div>
+          <p>Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="../products/index.html">Catalogue hub</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../products/motor-starters.html">Motor starters</a>
+          <a href="../products/motor-control.html">Motor control</a>
+          <a href="../products/power-control.html">Power control</a>
+          <a href="../products/enclosures.html">Enclosures</a>
+          <a href="download-center.html">Download Center</a>
+        </div>
+        <div class="footer-col">
+          <h5>Solutions</h5>
+          <a href="../solutions/index.html">Solutions hub</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../solutions/industries.html">Industries</a>
+          <a href="../solutions/applications.html">Applications</a>
+          <a href="../solutions/industries/agriculture.html">Agriculture</a>
+          <a href="../solutions/industries/mining.html">Mining</a>
+          <a href="../solutions/case-studies.html">Case studies</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="index.html">Support</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="verify-product.html">Verify product</a>
+          <a href="report-counterfeit.html">Counterfeit</a>
+          <a href="download-center.html">Download Center</a>
+          <a href="faqs.html">FAQ</a>
+          <a href="customer-care.html">Customer care</a>
+          <a href="sales-offices.html">Sales offices</a>
+          <a href="find-a-dealer.html">Find a dealer</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../company/about.html">About</a>
+          <a href="../company/leadership.html">Leadership</a>
+          <a href="../company/manufacturing.html">Manufacturing &amp; R&amp;D</a>
+          <a href="../company/csr.html">CSR</a>
+          <a href="../company/certificates.html">Certificates</a>
+          <a href="../company/careers.html">Careers</a>
+          <a href="../company/investor.html">Investor relations</a>
+          <a href="../company/news.html">News</a>
+          <a href="../blogs/index.html">Blog</a>
+          <a href="../company/media.html">Media</a>
+          <a href="../contact/index.html">Contact / Enquire</a>
+        </div>
+      </div>
+      <div class="footer-legal" aria-label="Legal and governance">
+        <a href="../legal/privacy.html">Privacy</a>
+        <a href="../legal/terms.html">Terms</a>
+        <a href="../legal/data-privacy.html">Data privacy</a>
+        <a href="faqs.html">FAQ</a>
+        <a href="../company/news.html">News</a>
+        <a href="../blogs/index.html">Blog</a>
+        <a href="download-center.html">Downloads</a>
+
+        <a href="../company/annual-reports.html">Annual reports</a>
+        <a href="../company/agm-notices.html">AGM notices</a>
+        <a href="../company/leadership.html">Leadership</a>
+        <a href="../company/investor.html">Investor relations</a>
+        <a href="../company/public-notices.html">Public notices</a>
+        <a href="../company/careers.html">Careers</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© BCH Electric Limited · Wireframe IA v3</span>
+        <span>Grayscale · BrandClef</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../offices.js"></script>
+  <script src="../chrome.js"></script>
+  <script src="../feedback.js"></script>
+</body>
+</html>

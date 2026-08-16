@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — BCH Electric (Wireframe)</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-page="contact" data-page-title="Contact / Enquire">
+  <div class="wf-banner">Wireframe · IA v3 · not final</div>
+  <div class="utility-bar" aria-label="Utility">
+    <div class="util-left">
+      <a href="../products/selector.html">Product selector</a>
+      <a href="../support/find-a-dealer.html">Find a dealer</a>
+      <a href="../index.html">Enquire</a>
+    </div>
+    <div class="loc-wrap">
+      <button type="button" class="loc-trigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="loc-panel" aria-label="Region and language: India | EN">
+        <svg class="loc-globe" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+          <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          <ellipse cx="8" cy="8" rx="2.8" ry="6.5" fill="none" stroke="currentColor" stroke-width="1"/>
+          <path d="M1.5 8h13M2.8 4.5h10.4M2.8 11.5h10.4" fill="none" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <span class="loc-label">India | EN</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-logo" href="../index.html">BCH<em>Electric</em></a>
+    <button type="button" class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="../products/index.html" data-nav="products">Products</a>
+      <a href="../solutions/index.html" data-nav="solutions">Solutions</a>
+      <a href="../support/index.html" data-nav="support">Support</a>
+      <a href="../company/about.html" data-nav="company">Company</a>
+      <a href="index.html" data-nav="contact" class="is-active">Contact</a>
+    </div>
+    <form class="nav-search" role="search" data-nav-search action="../search.html" method="get">
+      <label class="visually-hidden">Search</label>
+      <input type="search" name="q" placeholder="Search" aria-label="Search" />
+      <button type="submit">Search</button>
+    </form>
+    <a class="nav-cta" href="../support/download-center.html">Download Center</a>
+  </nav>
+  <main class="main">
+
+        <div class="container">
+      <header class="page-header">
+        <span class="section-label">Enquire · network</span>
+        <h1>Contact</h1>
+        <p class="lead">Corporate Delhi, Work 1 Faridabad, Work 2 Rudrapur, plus the sales-office network. Prices are not published on this site — request a current list here.</p>
+        <div class="btn-row">
+          <a class="btn" href="../support/sales-offices.html">Sales offices</a>
+          <a class="btn" href="../support/find-a-dealer.html">Find a dealer</a>
+        </div>
+      </header>
+
+            <section id="nearest-support" class="nearest-support" aria-label="Nearest support">
+        <form data-wireframe-form data-nearest-form novalidate>
+          <span class="section-label">Support near you</span>
+          <h2>Where do you need support?</h2>
+          <p class="lead">Pick a state and city to see who can help for support. Helpline always on.</p>
+          <div class="form-grid ns-grid">
+            <div class="field"><label for="ns-state">State</label>
+              <select id="ns-state" name="state"><option value="">Select state</option></select></div>
+            <div class="field"><label for="ns-city">City</label>
+              <select id="ns-city" name="city" disabled><option value="">Select city</option></select></div>
+          </div>
+          <div class="btn-row"><button type="submit" class="btn btn-fill">Find support</button></div>
+          <div class="form-note" hidden></div>
+        </form>
+        <div id="ns-results" class="ns-results" hidden></div>
+        <p class="helpline-meta">Helpline <strong>1800 103 9262</strong> · <a href="mailto:customercare@bchindia.com">customercare@bchindia.com</a></p>
+      </section>
+
+      <section class="section-tight band-white">
+        <span class="section-label">Plants &amp; corporate</span>
+        <div class="office-grid mt-12">
+          <article class="office-card">
+            <div class="map-embed is-office">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.038994029877!2d77.22473015082316!3d28.628593390923523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd3238090bd3%3A0xbb6169fca4c793bb!2sBhartia+Industrial+Limited!5e0!3m2!1sen!2sin!4v1520506328340" title="Corporate Office — New Delhi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <span class="tag">Corporate Office</span>
+            <h3>Delhi</h3>
+            <address>1105, New Delhi House, 27, Barakhamba Road, New Delhi – 110 001</address>
+            <div class="tel">011-43673100 · fax 91-11-23715247</div>
+          </article>
+          <article class="office-card">
+            <div class="map-embed is-office">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.8886791689847!2d77.31295485081874!3d28.36221500292855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cddb7b85e5d5d%3A0xe10d09e26b62c6b6!2sBCH+Electric+Limited!5e0!3m2!1sen!2sin!4v1520506480866" title="Work 1 — Faridabad" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <span class="tag">Work 1 · plant</span>
+            <h3>Faridabad</h3>
+            <address>20/4, Mathura Road, Faridabad – 121 006, Haryana</address>
+            <div class="tel">0129-4063000 · 0129-4293000 · fax 0129-2304016</div>
+          </article>
+          <article class="office-card">
+            <div class="map-embed is-office">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.7198314543043!2d79.41503565082942!3d28.995672074215886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a07fd6e2d12963%3A0xb287fad4cba5d764!2sBCH+Electric+Ltd.%2C+Rudrapur!5e0!3m2!1sen!2sin!4v1520506567136" title="Work 2 — Rudrapur" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <span class="tag">Work 2 · plant</span>
+            <h3>Rudrapur</h3>
+            <address>64-68, Sector-7, IIE, Pant Nagar, Rudrapur, Udham Singh Nagar – 263 153, Uttarakhand</address>
+            <div class="tel">05944-250214 / 16 · fax 05944-250215</div>
+          </article>
+        </div>
+        <p class="mt-12 helpline-meta">Helpline <strong>1800 103 9262</strong> · <a href="mailto:marketing@bchindia.com">marketing@bchindia.com</a> · <a href="mailto:customercare@bchindia.com">customercare@bchindia.com</a> · <a href="../support/index.html">Support hub</a></p>
+      </section>
+
+      <section class="section section-border band-dots">
+        <div class="section-head">
+          <div>
+            <span class="section-label">India · presence</span>
+            <h2>Plants, sales offices, dealer coverage</h2>
+          </div>
+          <a class="arrow-link" href="../support/sales-offices.html">Full sales-office list →</a>
+        </div>
+        <div class="map-split">
+          <div>
+            <div class="map-embed"><iframe title="India — BCH plants and sales offices" src="https://www.google.com/maps?q=India&amp;hl=en&amp;z=5&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+            <div class="map-legend">
+              <span>India overview · plants at Faridabad &amp; Rudrapur · 24 sales offices</span>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm mb-12">30 branch offices across India (live FAQ). Sales-office names and addresses below are from the live sales-offices page.</p>
+            <ul class="loc-cols">
+              <li><strong>Ahmedabad</strong><span>Ellisbridge, Ahmedabad</span></li><li><strong>Bangalore</strong><span>KH Road, Bangalore</span></li><li><strong>Bhubaneswar</strong><span>Unit-3, Bhubaneswar</span></li><li><strong>Chandigarh</strong><span>Sector-16, Panchkula</span></li><li><strong>Chennai</strong><span>Alwarpet, Chennai</span></li><li><strong>Coimbatore</strong><span>Dr. Nanjappa Road</span></li><li><strong>Dehradun</strong><span>Patel Nagar, Dehradun</span></li><li><strong>Faridabad</strong><span>Mathura Road, Faridabad</span></li><li><strong>Hyderabad</strong><span>P.G. Road, Secunderabad</span></li><li><strong>Indore</strong><span>M.G. Road, Indore</span></li><li><strong>Jaipur</strong><span>Gopalbari, Jaipur</span></li><li><strong>Jamshedpur</strong><span>Bistupur, Jamshedpur</span></li><li><strong>Kolkata</strong><span>A.J.C Bose Road</span></li><li><strong>Lucknow</strong><span>Sushant Golf City</span></li><li><strong>Ludhiana</strong><span>Feroze Gandhi Market</span></li><li><strong>Mumbai</strong><span>Mittal Tower, Nariman Point</span></li><li><strong>Delhi 1</strong><span>Akash Deep, Barakhamba</span></li><li><strong>Delhi 2</strong><span>Deepali, Nehru Place</span></li><li><strong>Pune</strong><span>Satara Road, Pune</span></li><li><strong>Raipur</strong><span>VIP Chowk, Raipur</span></li><li><strong>Trichy</strong><span>K.K. Nagar, Trichy</span></li><li><strong>Vadodara</strong><span>Akota, Vadodara</span></li><li><strong>Madurai</strong><span>Ellis Nagar, Madurai</span></li><li><strong>Patna</strong><span>Exhibition Road, Patna</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-border band-grey">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Global · channel partners</span>
+            <h2>International presence</h2>
+          </div>
+          <a class="arrow-link" href="../solutions/partners.html">Partner with us →</a>
+        </div>
+        <div class="map-split">
+          <div>
+            <figure class="globe-fig">
+              <div class="globe" role="img" aria-label="Dummy globe with pins at India, Europe, USA and China">
+                <span class="globe-badge">Dummy / wireframe</span>
+                <svg class="globe-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="globeFill" cx="36%" cy="30%">
+                      <stop offset="0%" stop-color="#f2f2f2"/>
+                      <stop offset="62%" stop-color="#cfcfcf"/>
+                      <stop offset="100%" stop-color="#9a9a9a"/>
+                    </radialGradient>
+                    <clipPath id="globeClip"><circle cx="240" cy="240" r="198"/></clipPath>
+                  </defs>
+                  <circle cx="240" cy="240" r="200" fill="url(#globeFill)" stroke="#111" stroke-width="1.5"/>
+                  <g clip-path="url(#globeClip)" fill="none" stroke="#bbb" stroke-width="0.7">
+                    <ellipse cx="240" cy="240" rx="198" ry="66"/>
+                    <ellipse cx="240" cy="240" rx="198" ry="132"/>
+                    <ellipse cx="240" cy="240" rx="66" ry="198"/>
+                    <ellipse cx="240" cy="240" rx="132" ry="198"/>
+                    <line x1="42" y1="240" x2="438" y2="240"/>
+                    <line x1="240" y1="42" x2="240" y2="438"/>
+                  </g>
+                  <g clip-path="url(#globeClip)" fill="#8d8d8d" stroke="#111" stroke-width="0.6">
+                    <path d="M88 138 C112 108 158 112 172 152 C182 184 142 214 116 202 C90 186 72 164 88 138Z"/>
+                    <path d="M148 232 C168 226 178 254 170 296 C160 332 146 346 138 312 C130 270 130 242 148 232Z"/>
+                    <path d="M228 128 C252 116 276 128 272 152 C258 168 234 164 228 144Z"/>
+                    <path d="M234 168 C268 160 284 202 272 252 C256 286 234 274 226 232 C220 194 218 174 234 168Z"/>
+                    <path d="M318 192 C338 186 348 212 340 238 C328 256 316 246 314 220 C312 204 310 196 318 192Z"/>
+                    <path d="M348 142 C386 136 408 166 390 198 C368 210 342 184 348 142Z"/>
+                    <path d="M372 282 C404 276 418 304 396 318 C374 324 360 300 372 282Z"/>
+                  </g>
+                  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="500">
+                    <g transform="translate(128,168)">
+                      <circle r="11" fill="none" stroke="#111" stroke-width="1"/>
+                      <circle r="5.5" fill="#111"/>
+                      <rect x="12" y="-18" width="36" height="16" fill="#111"/>
+                      <text x="30" y="-7" text-anchor="middle" fill="#fff">USA</text>
+                    </g>
+                    <g transform="translate(252,142)">
+                      <circle r="11" fill="none" stroke="#111" stroke-width="1"/>
+                      <circle r="5.5" fill="#111"/>
+                      <rect x="12" y="-18" width="52" height="16" fill="#111"/>
+                      <text x="38" y="-7" text-anchor="middle" fill="#fff">Europe</text>
+                    </g>
+                    <g transform="translate(328,214)">
+                      <circle r="11" fill="none" stroke="#111" stroke-width="1"/>
+                      <circle r="5.5" fill="#111"/>
+                      <rect x="12" y="-18" width="42" height="16" fill="#111"/>
+                      <text x="33" y="-7" text-anchor="middle" fill="#fff">India</text>
+                    </g>
+                    <g transform="translate(372,168)">
+                      <circle r="11" fill="none" stroke="#111" stroke-width="1"/>
+                      <circle r="5.5" fill="#111"/>
+                      <rect x="-54" y="-18" width="44" height="16" fill="#111"/>
+                      <text x="-32" y="-7" text-anchor="middle" fill="#fff">China</text>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <figcaption class="globe-caption">Dummy for now — not live export offices. Pins: India · Europe · USA · China.</figcaption>
+            </figure>
+            <div class="map-legend globe-legend">
+              <span>India</span><span>Europe</span><span>USA</span><span>China</span>
+              <span>Export contact <a href="mailto:exports@bchindia.com">exports@bchindia.com</a> — dummy pins, not live offices</span>
+            </div>
+          </div>
+          <div>
+            <p class="lead">Export is listed on the live sales-offices page as an email contact only. No overseas office, city, or country list on Contact / Sales Offices.</p>
+            <ul class="loc-cols" style="columns:1;">
+              <li><strong>Export</strong><span><a href="mailto:exports@bchindia.com">exports@bchindia.com</a></span></li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn" href="../solutions/partners.html">OEM / Partner with us →</a>
+              <a class="btn" href="#enquiry">Export enquiry →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-border band-ink" id="enquiry">
+        <div class="split">
+          <form data-wireframe-form>
+            <span class="section-label">Enquiry</span>
+            <h2 class="mb-16">Get a response within maximum 2 days</h2>
+            <div class="form-grid">
+              <div class="field"><label>First name</label><input type="text" /></div>
+              <div class="field"><label>Last name</label><input type="text" /></div>
+              <div class="field"><label>Email</label><input type="email" /></div>
+              <div class="field"><label>Phone</label><input type="tel" /></div>
+              <div class="field full"><label>Company</label><input type="text" /></div>
+              <div class="field"><label>Country</label><select><option>India</option><option>Other</option></select></div>
+              <div class="field"><label>Nearest office (optional)</label>
+                <select>
+                  <option>Not sure — route me</option>
+                  <option>Corporate Delhi</option>
+                  <option>Work 1 Faridabad</option>
+                  <option>Work 2 Rudrapur</option>
+                  <option>Ahmedabad</option>
+                  <option>Bangalore</option>
+                  <option>Bhubaneswar</option>
+                  <option>Chandigarh</option>
+                  <option>Chennai</option>
+                  <option>Coimbatore</option>
+                  <option>Dehradun</option>
+                  <option>Faridabad</option>
+                  <option>Hyderabad</option>
+                  <option>Indore</option>
+                  <option>Jaipur</option>
+                  <option>Jamshedpur</option>
+                  <option>Kolkata</option>
+                  <option>Lucknow</option>
+                  <option>Ludhiana</option>
+                  <option>Mumbai</option>
+                  <option>Delhi 1</option>
+                  <option>Delhi 2</option>
+                  <option>Pune</option>
+                  <option>Raipur</option>
+                  <option>Trichy</option>
+                  <option>Vadodara</option>
+                  <option>Madurai</option>
+                  <option>Patna</option>
+                </select>
+              </div>
+              <div class="field full"><label>Enquiry type</label>
+                <select>
+                  <option>Product RFQ</option>
+                  <option>Price list request</option>
+                  <option>Technical support</option>
+                  <option>Find a dealer</option>
+                  <option>Become a dealer / partner</option>
+                  <option>OEM / export</option>
+                  <option>General</option>
+                </select>
+              </div>
+              <div class="field full"><label>Message</label><textarea placeholder="Product, ratings, project context…"></textarea></div>
+            </div>
+            <div class="btn-row"><button type="submit" class="btn btn-fill">Send enquiry</button></div>
+            <div class="form-note" id="form-wireframe-note">Wireframe form — submit is simulated. Live site: response within 2 days.</div>
+          </form>
+          <div>
+            <div class="card-soft mb-24">
+              <h3>Prefer a dealer?</h3>
+              <p class="mb-16">Locate an authorised partner in your region.</p>
+              <a class="btn" href="../support/find-a-dealer.html">Find a dealer →</a>
+            </div>
+            <div class="card-soft mb-24">
+              <h3>Customer care</h3>
+              <p class="mb-8">1800 103 9262 · <a href="mailto:customercare@bchindia.com">customercare@bchindia.com</a></p>
+              <a class="btn" href="../support/index.html">Support hub →</a>
+            </div>
+            <div class="card-soft">
+              <h3>Sales offices</h3>
+              <p class="text-sm">Full names, addresses, phones and emails from <span class="mono">bchindia.com/sales-offices/</span>.</p>
+              <a class="btn" href="../support/sales-offices.html">Sales offices →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+        </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">BCH Electric</div>
+          <div class="footer-tagline">har haal mein</div>
+          <p>Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="../products/index.html">Catalogue hub</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../products/motor-starters.html">Motor starters</a>
+          <a href="../products/motor-control.html">Motor control</a>
+          <a href="../products/power-control.html">Power control</a>
+          <a href="../products/enclosures.html">Enclosures</a>
+          <a href="../support/download-center.html">Download Center</a>
+        </div>
+        <div class="footer-col">
+          <h5>Solutions</h5>
+          <a href="../solutions/index.html">Solutions hub</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../solutions/industries.html">Industries</a>
+          <a href="../solutions/applications.html">Applications</a>
+          <a href="../solutions/industries/agriculture.html">Agriculture</a>
+          <a href="../solutions/industries/mining.html">Mining</a>
+          <a href="../solutions/case-studies.html">Case studies</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="../support/index.html">Support</a>
+          <a href="../products/selector.html">Product selector</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../support/verify-product.html">Verify product</a>
+          <a href="../support/report-counterfeit.html">Counterfeit</a>
+          <a href="../support/download-center.html">Download Center</a>
+          <a href="../support/faqs.html">FAQ</a>
+          <a href="../support/customer-care.html">Customer care</a>
+          <a href="../support/sales-offices.html">Sales offices</a>
+          <a href="../support/find-a-dealer.html">Find a dealer</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../company/about.html">About</a>
+          <a href="../company/leadership.html">Leadership</a>
+          <a href="../company/manufacturing.html">Manufacturing &amp; R&amp;D</a>
+          <a href="../company/csr.html">CSR</a>
+          <a href="../company/certificates.html">Certificates</a>
+          <a href="../company/careers.html">Careers</a>
+          <a href="../company/investor.html">Investor relations</a>
+          <a href="../company/news.html">News</a>
+          <a href="../blogs/index.html">Blog</a>
+          <a href="../company/media.html">Media</a>
+          <a href="../index.html">Contact / Enquire</a>
+        </div>
+      </div>
+      <div class="footer-legal" aria-label="Legal and governance">
+        <a href="../legal/privacy.html">Privacy</a>
+        <a href="../legal/terms.html">Terms</a>
+        <a href="../legal/data-privacy.html">Data privacy</a>
+        <span class="footer-copy">© BCH Electric Limited 2026</span>
+        <a href="../company/public-notices.html">Public notices</a>
+        <a href="../company/careers.html">Careers</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© BCH Electric Limited · Wireframe IA v3</span>
+        <span>Grayscale · BrandClef</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../offices.js"></script>
+  <script src="../chrome.js"></script>
+  <script src="../feedback.js"></script>
+</body>
+</html>

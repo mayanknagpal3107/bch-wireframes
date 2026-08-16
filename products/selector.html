@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Selector — BCH Electric (Wireframe)</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-page="selector" data-page-title="Product selector">
+  <div class="wf-banner">Wireframe · IA v3 · not final</div>
+  <div class="utility-bar" aria-label="Utility">
+    <nav class="lang-bar" aria-label="Language / view">
+      <button type="button" class="lang-opt" data-view="global">Global</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="hi">हिंदी</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt is-active" data-view="en" aria-pressed="true">English</button>
+      <span class="lang-dot" aria-hidden="true">·</span>
+      <button type="button" class="lang-opt" data-view="de">Deutsch</button>
+    </nav>
+    <div class="util-right">
+      <a href="selector.html">Product selector</a>
+      <a href="../support/find-a-dealer.html">Find a dealer</a>
+      <a href="../contact/index.html">Enquire</a>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-logo" href="../index.html">BCH<em>Electric</em></a>
+    <button type="button" class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html" data-nav="products" class="is-active">Products</a>
+      <a href="../solutions/index.html" data-nav="solutions">Solutions</a>
+      <a href="../support/index.html" data-nav="support">Support</a>
+      <a href="../company/about.html" data-nav="company">Company</a>
+      <a href="../contact/index.html" data-nav="contact">Contact</a>
+    </div>
+    <form class="nav-search" role="search" data-nav-search action="../search.html" method="get">
+      <label class="visually-hidden">Search</label>
+      <input type="search" name="q" placeholder="Search" aria-label="Search" />
+      <button type="submit">Search</button>
+    </form>
+    <a class="nav-cta" href="../support/download-center.html">Download Center</a>
+  </nav>
+  <main class="main">
+
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Products</a><span>/</span>Product selector</div>
+      <header class="page-header">
+        <span class="section-label">Select · family first</span>
+        <h1>Product selector</h1>
+        <p class="lead">Application → industry → rating. We match brochure families and ranges — not a SKU list. A human follows up.</p>
+      </header>
+
+      <p class="note-box mb-24"><strong>Not a SKU configurator.</strong> BCH’s live catalogue is family-deep (starters, motor &amp; power control, enclosures, panels). This tool points you to the right door — then <a href="../index.html">browse the catalogue</a> or <a href="../contact/index.html">enquire</a> for a named code. <strong>No prices on this page</strong> — prices change; request a quote or price list via Contact us / Enquire.</p>
+
+      <section class="section-tight">
+        <form data-wireframe-form>
+          <span class="step-k">01 · Application</span>
+          <div class="choice-grid" role="radiogroup" aria-label="Application">
+            <label class="choice"><input type="radio" name="application" value="starter" checked /><strong>Starter</strong><em>DOL · FASD · SASD · pump</em></label>
+            <label class="choice"><input type="radio" name="application" value="motor" /><strong>Motor control</strong><em>Contactors · MPCB · relays</em></label>
+            <label class="choice"><input type="radio" name="application" value="power" /><strong>Power control</strong><em>ACB · MCCB · MCB · SDF</em></label>
+            <label class="choice"><input type="radio" name="application" value="enclosure" /><strong>Enclosure</strong><em>Bhartia · TME · desks</em></label>
+            <label class="choice"><input type="radio" name="application" value="panel" /><strong>Panel</strong><em>MCC · PCC · crane · APFC</em></label>
+          </div>
+
+          <span class="step-k">02 · Industry / duty</span>
+          <div class="form-grid">
+            <div class="field"><label>Industry</label>
+              <select>
+                <option>Select industry</option>
+                <option>Agriculture / pump</option>
+                <option>Steel / process</option>
+                <option>Rail / infra</option>
+                <option>Mining</option>
+                <option>Crane / OEM</option>
+                <option>Buildings / distribution</option>
+                <option>Other / not sure</option>
+              </select>
+            </div>
+            <div class="field"><label>Role</label>
+              <select>
+                <option>Specifier / consultant</option>
+                <option>Panel builder</option>
+                <option>OEM</option>
+                <option>Dealer</option>
+                <option>Electrician / contractor</option>
+                <option>End user</option>
+              </select>
+            </div>
+          </div>
+
+          <span class="step-k">03 · Rating / HP / current</span>
+          <div class="form-grid">
+            <div class="field"><label>Motor HP (if starter / motor)</label><input type="text" placeholder="e.g. 3–20 HP" /></div>
+            <div class="field"><label>Current / In (if power device)</label><input type="text" placeholder="e.g. 16–630 A" /></div>
+            <div class="field"><label>Voltage / poles</label><input type="text" placeholder="e.g. 110–415 V · 3P / 4P" /></div>
+            <div class="field"><label>IP / environment (optional)</label><input type="text" placeholder="e.g. IP54, dusty, outdoor" /></div>
+            <div class="field full"><label>Notes</label><textarea placeholder="Duty, standards, existing range (Shakti / Citation / Ultra Power / Bhartia)…"></textarea></div>
+            <div class="field"><label>Name</label><input type="text" /></div>
+            <div class="field"><label>Phone / email</label><input type="text" placeholder="We’ll reply on this channel" /></div>
+          </div>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-fill">Help me select</button>
+            <a class="btn" href="../index.html">Browse families instead →</a>
+            <a class="btn" href="../contact/index.html">Enquire with a spec →</a>
+            <a class="btn btn-fill" href="../contact/index.html">Enquire for pricing →</a>
+          </div>
+          <div class="form-note">Wireframe form — submit is simulated. Production would route to selection support, not auto-pick a SKU.</div>
+        </form>
+      </section>
+
+      <section class="section section-border">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Typical matches · families</span>
+            <h2>We’ll land you here — then the catalogue</h2>
+          </div>
+          <a class="arrow-link" href="all.html">All products →</a>
+        </div>
+        <div class="family-match">
+          <a class="family-card is-visual" href="motor-starters.html"><div class="ph ph-card">Photo · Starters</div><h3>Starters</h3><p>Shakti · Citation · DOL / FASD / pump</p><div class="family-actions"><span>Browse →</span></div></a>
+          <a class="family-card is-visual" href="motor-control.html"><div class="ph ph-card">Photo · Motor control</div><h3>Motor control</h3><p>Freedom · Citation · MPCB</p><div class="family-actions"><span>Browse →</span></div></a>
+          <a class="family-card is-visual" href="power-control.html"><div class="ph ph-card">Photo · Power control</div><h3>Power control</h3><p>Ultra Power ACB · Resilient MCCB · X10 MCB</p><div class="family-actions"><span>Browse →</span></div></a>
+          <a class="family-card is-visual" href="enclosures.html"><div class="ph ph-card">Photo · Enclosures</div><h3>Enclosures</h3><p>Bhartia 2.0 · TME · TCE</p><div class="family-actions"><span>Browse →</span></div></a>
+          <a class="family-card is-visual" href="../solutions/index.html"><div class="ph ph-card">Photo · Panels</div><h3>Panels</h3><p>MCC · PCC · crane · APFC</p><div class="family-actions"><span>Browse →</span></div></a>
+        </div>
+      </section>
+    </div>
+
+        </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">BCH Electric</div>
+          <div class="footer-tagline">har haal mein</div>
+          <p>Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="index.html">Catalogue hub</a>
+          <a href="selector.html">Product selector</a>
+          <a href="motor-starters.html">Motor starters</a>
+          <a href="motor-control.html">Motor control</a>
+          <a href="power-control.html">Power control</a>
+          <a href="enclosures.html">Enclosures</a>
+          <a href="../support/download-center.html">Download Center</a>
+        </div>
+        <div class="footer-col">
+          <h5>Solutions</h5>
+          <a href="../solutions/index.html">Solutions hub</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../solutions/industries.html">Industries</a>
+          <a href="../solutions/applications.html">Applications</a>
+          <a href="../solutions/industries/agriculture.html">Agriculture</a>
+          <a href="../solutions/industries/mining.html">Mining</a>
+          <a href="../solutions/case-studies.html">Case studies</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="../support/index.html">Support</a>
+          <a href="selector.html">Product selector</a>
+          <a href="../solutions/partners.html">Partners</a>
+          <a href="../support/verify-product.html">Verify product</a>
+          <a href="../support/report-counterfeit.html">Counterfeit</a>
+          <a href="../support/download-center.html">Download Center</a>
+          <a href="../support/faqs.html">FAQ</a>
+          <a href="../support/customer-care.html">Customer care</a>
+          <a href="../support/sales-offices.html">Sales offices</a>
+          <a href="../support/find-a-dealer.html">Find a dealer</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../company/about.html">About</a>
+          <a href="../company/leadership.html">Leadership</a>
+          <a href="../company/manufacturing.html">Manufacturing &amp; R&amp;D</a>
+          <a href="../company/csr.html">CSR</a>
+          <a href="../company/certificates.html">Certificates</a>
+          <a href="../company/careers.html">Careers</a>
+          <a href="../company/investor.html">Investor relations</a>
+          <a href="../company/news.html">News</a>
+          <a href="../blogs/index.html">Blog</a>
+          <a href="../company/media.html">Media</a>
+          <a href="../contact/index.html">Contact / Enquire</a>
+        </div>
+      </div>
+      <div class="footer-legal" aria-label="Legal and governance">
+        <a href="../legal/privacy.html">Privacy</a>
+        <a href="../legal/terms.html">Terms</a>
+        <a href="../legal/data-privacy.html">Data privacy</a>
+        <span class="footer-copy">© BCH Electric Limited 2026</span>
+        <a href="../company/public-notices.html">Public notices</a>
+        <a href="../company/careers.html">Careers</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© BCH Electric Limited · Wireframe IA v3</span>
+        <span>Grayscale · BrandClef</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../chrome.js"></script>
+  <script src="../feedback.js"></script>
+</body>
+</html>

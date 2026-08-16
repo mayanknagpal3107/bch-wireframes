@@ -1,0 +1,14 @@
+# Multi-page static wireframe — do not SPA-fallback to /index.html.
+# Root index.html is the home page (Cloudflare Pages default).
+# Directory indexes (contact/, products/, support/, solutions/, blogs/)
+# are served natively. Root *.html stubs already meta-refresh to canonical paths.
+# Trailing slash for section folders that have index.html:
+/contact /contact/ 302
+/products /products/ 302
+/support /support/ 302
+/solutions /solutions/ 302
+/blogs /blogs/ 302
+/company/board.html /company/leadership.html 302
+/company/research.html /company/manufacturing.html 302
+/company/inventory.html /sitemap.html 302
+/rd.html /company/manufacturing.html 302
