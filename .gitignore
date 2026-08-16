@@ -5,3 +5,5 @@ start-cf-tunnel.sh
 cloudflared
 .wrangler/
 node_modules/
+
+_full/
