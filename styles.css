@@ -3449,3 +3449,44 @@ html.bch-gate-lock body { overflow: hidden !important; }
   .nav-ai-btn { display: none !important; }
   .nav-cta-drawer { display: none !important; }
 }
+
+/* —— Home presence (merged dealers + scale) —— */
+.presence-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 16px 0 0;
+}
+.presence-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 18px 16px 20px;
+}
+.presence-card .section-label { margin-bottom: 8px; }
+.presence-card h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+.presence-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+  max-width: none;
+}
+@media (max-width: 960px) {
+  .presence-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .presence-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .presence-card {
+    padding: 18px 16px;
+  }
+}
