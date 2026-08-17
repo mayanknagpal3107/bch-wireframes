@@ -34,3 +34,4 @@ Design feedback pass after stakeholder-fix merge.
 - Home products: four live-site-style type cards (Motor starters, Industrial products, Enclosures, Solutions), full-card tappable.
 - Mobile chrome: hide utility bar; bar = logo + AI search icon + hamburger; Contact us inside drawer (desktop unchanged).
 - Home: merge Sales/distribution + Scale into one **Global presence** section (partners, 500+ dealers, 60 years in 2025, rugged India-duty products).
+- Remove **Cutler-Hammer heritage** from footers and non-history copy; keep Cutler-Hammer only in About → History (and official PF-trust notice titles).
