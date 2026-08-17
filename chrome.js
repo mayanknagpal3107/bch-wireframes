@@ -1429,8 +1429,7 @@ function aboutMega() {
     var articlePages = {
       "blog-post": 1,
       "news-post": 1,
-      "media-post": 1,
-      "case-study-post": 1
+      "media-post": 1
     };
     if (!articlePages[page]) return;
     if (document.querySelector(".article-layout")) return;
@@ -1619,8 +1618,8 @@ function aboutMega() {
     if (page === "case-study-post") {
       return [
         ["solutions/case-studies/pump-set-field.html", "Pump-set starters in the field"],
-        ["company/news/product-demo-at-hindalco-belur-june-2018.html", "Product Demo at Hindalco, Belur : June 2018"],
-        ["blogs/dol-starter-wiring-diagram.html", "DOL starter wiring diagram and sequence of operation explained"]
+        ["solutions/case-studies/pune-line-support.html", "Four-hour line support in Pune"],
+        ["solutions/case-studies/chennai-oem-export.html", "Export OEM panel platform · Chennai"]
       ];
     }
     return [];
