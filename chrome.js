@@ -584,8 +584,6 @@ function aboutMega() {
       '<div class="mega-col">' +
       '<a class="mega-h" href="' + href("company/careers.html") + '">' + m.people + "</a>" +
       l2(href("company/careers.html"), "CA", "Careers") +
-      l2(href("support/digital-ecosystem.html"), "DE", "Digital ecosystem") +
-      l2(href("legal/dpdp.html"), "DP", "DPDP compliance") +
       "</div>" +
       "</div>"
     );
@@ -690,13 +688,25 @@ function aboutMega() {
     ensureNavAiBtn(nav, toggle);
   }
 
+  function askSearchIconHtml() {
+    /* Magnifying glass + sparkle — Google AI Mode–style search mark */
+    return (
+      '<svg class="ask-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">' +
+      '<circle cx="10" cy="10.5" r="5.25" fill="none" stroke="currentColor" stroke-width="1.7"/>' +
+      '<path d="M14.2 14.7L19 19.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/>' +
+      '<path d="M17.6 3.2l.85 2.15 2.15.85-2.15.85-.85 2.15-.85-2.15-2.15-.85 2.15-.85z" fill="currentColor"/>' +
+      '<path d="M20.7 8.1l.45 1.15 1.15.45-1.15.45-.45 1.15-.45-1.15-1.15-.45 1.15-.45z" fill="currentColor"/>' +
+      "</svg>"
+    );
+  }
+
   function ensureNavAiBtn(nav, toggle) {
     if (!nav || nav.querySelector(".nav-ai-btn")) return;
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "nav-ai-btn";
     btn.setAttribute("aria-label", "Ask AI search");
-    btn.innerHTML = '<span class="ask-mark" aria-hidden="true">AI</span>';
+    btn.innerHTML = askSearchIconHtml();
     if (toggle) nav.insertBefore(btn, toggle);
     else nav.appendChild(btn);
     btn.addEventListener("click", function (e) {
@@ -889,7 +899,7 @@ function aboutMega() {
       "download-center": "resources",
       "find-a-dealer": null,
       "verify-product": null,
-      "digital-ecosystem": "company",
+      "digital-ecosystem": null,
       "report-counterfeit": null,
       research: "company",
       all: "products",
@@ -1154,11 +1164,16 @@ function aboutMega() {
       if (inp) {
         inp.setAttribute("placeholder", i18.searchPh);
         inp.setAttribute("aria-label", i18.searchAria);
-        if (!form.querySelector(".ask-mark")) {
+        var existingMark = form.querySelector(".ask-mark");
+        if (existingMark && !existingMark.querySelector(".ask-ico")) {
+          existingMark.className = "ask-mark ask-mark-ico";
+          existingMark.setAttribute("aria-hidden", "true");
+          existingMark.innerHTML = askSearchIconHtml();
+        } else if (!form.querySelector(".ask-ico") && !existingMark) {
           var mark = document.createElement("span");
-          mark.className = "ask-mark";
+          mark.className = "ask-mark ask-mark-ico";
           mark.setAttribute("aria-hidden", "true");
-          mark.textContent = "AI";
+          mark.innerHTML = askSearchIconHtml();
           form.insertBefore(mark, inp);
         }
       }
@@ -1340,6 +1355,7 @@ function aboutMega() {
         '<a href="' + href("support/find-a-dealer.html") + '">Find a dealer</a>' +
         '<a href="' + href("support/verify-product.html") + '">Verify product</a>' +
         '<a href="' + href("support/report-counterfeit.html") + '">Report Counterfeit</a>' +
+        '<a href="' + href("support/digital-ecosystem.html") + '">Digital ecosystem</a>' +
         '<a href="' + href("support/faqs.html") + '">FAQ</a>' +
         '<a href="' + href("contact/index.html") + '">Enquire</a>' +
         "</div>" +
@@ -1358,6 +1374,7 @@ function aboutMega() {
       legal.innerHTML =
         '<a href="' + href("legal/privacy.html") + '">Privacy</a>' +
         '<a href="' + href("legal/terms.html") + '">Terms</a>' +
+        '<a href="' + href("legal/dpdp.html") + '">DPDP compliance</a>' +
         '<a href="' + href("company/public-notices.html") + '">Public notices</a>' +
         '<a href="' + href("company/vigil.html") + '">Vigil</a>';
     }
@@ -1876,6 +1893,9 @@ function aboutMega() {
     applyLoc(loc);
     enhanceAll(false);
   }
+
+  window.BCHChrome = window.BCHChrome || {};
+  window.BCHChrome.askSearchIconHtml = askSearchIconHtml;
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
