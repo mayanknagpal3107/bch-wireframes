@@ -1342,6 +1342,7 @@ function aboutMega() {
         '<div class="footer-col"><h5 data-en="Company">' + (i18.nav.company || "Company") + "</h5>" +
         '<a href="' + href("company/index.html") + '">Company hub</a>' +
         '<a href="' + href("company/about.html") + '">About</a>' +
+        '<a href="' + href("company/leadership.html") + '">Leadership</a>' +
         '<a href="' + href("company/investor.html") + '">Investor</a>' +
         '<a href="' + href("company/careers.html") + '">Careers</a>' +
         '<a href="' + href("blogs/index.html") + '">Blog</a>' +
