@@ -883,6 +883,7 @@ function aboutMega() {
       "custom-panels": "solutions",
       "combo-kits": "products",
       "dealer-tools": null,
+      electricians: null,
       "download-center": "resources",
       "find-a-dealer": null,
       "verify-product": null,
