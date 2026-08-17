@@ -544,6 +544,7 @@ function solutionsMega() {
       '<div class="mega-col">' +
       '<a class="mega-h" href="' + href("solutions/industries.html") + '">' + m.industries + "</a>" +
       l2(href("solutions/industries/agriculture.html"), "AG", "Agri") +
+      l2(href("solutions/industries/building-projects.html"), "BL", "Building") +
       l2(href("solutions/industries.html#steel"), "ST", "Steel") +
       l2(href("solutions/industries.html#rail"), "RA", "Rail") +
       l2(href("solutions/industries/mining.html"), "MI", "Mining") +
@@ -839,6 +840,7 @@ function aboutMega() {
       industries: "solutions",
       "industry-agriculture": "solutions",
       "industry-mining": "solutions",
+      "industry-building": "solutions",
       applications: "solutions",
       "case-studies": "resources",
       "case-study-post": "resources",
@@ -1282,6 +1284,7 @@ function aboutMega() {
     if (page === "industries") label = "Photo · Industries";
     else if (page.indexOf("agriculture") !== -1) label = "Photo · Agriculture / field";
     else if (page.indexOf("mining") !== -1) label = "Photo · Mining / plant";
+    else if (page.indexOf("building") !== -1) label = "Photo · Building / project site";
     else if (title) label = "Photo · " + title.replace(/^Industry\s+[—-]\s+/i, "");
     var hero = document.createElement("div");
     hero.className = "industry-load-photo";
