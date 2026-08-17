@@ -317,7 +317,7 @@
       searchAria: "AI product search",
       searchBtn: "Ask",
       chip: "English",
-      footerLine: "Industrial switchgear since 1965. Select · Spec · Download · Enquire. Cutler-Hammer heritage.",
+      footerLine: "Industrial switchgear since 1965. Select · Spec · Download · Enquire.",
       download: "Download Center",
       appAgri: "Agriculture &amp; pump sets",
       appMotor: "Motor control &amp; protection",
