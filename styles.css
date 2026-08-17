@@ -1521,6 +1521,26 @@ h1.ap-h1 {
   display: block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--muted); margin-bottom: 6px; font-weight: 500;
 }
+.series-label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  margin: 0 0 8px;
+}
+.ap-card-top .series-label { margin-bottom: 8px; }
+.card .series-label,
+.shelf-carton .series-label,
+.family-card .series-label {
+  margin-bottom: 8px;
+}
+.pdp-identity .series-label {
+  margin-bottom: 6px;
+}
 .ap-card .ph {
   margin-top: auto; aspect-ratio: 5 / 4; min-height: 132px;
   border: none; background: #d4d4d4;
