@@ -37,3 +37,4 @@ Design feedback pass after stakeholder-fix merge.
 - Remove **Cutler-Hammer heritage** from footers and non-history copy; keep Cutler-Hammer only in About → History (and official PF-trust notice titles).
 - Home **Our values** cards: add line icons (match About values treatment).
 - Home case studies: three actionable proof cards (one number / one parameter — reliability, support, robustness) with distinct customer treatments.
+- Home testimonials: Farmer (Hinglish), Dealer, OEM, long-term Partnership — four quote cards.
