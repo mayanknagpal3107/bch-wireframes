@@ -661,6 +661,26 @@ function aboutMega() {
     return item;
   }
 
+  function ensureNavDrawer(nav) {
+    if (!nav || nav.querySelector(".nav-drawer")) return;
+    var links = nav.querySelector(".nav-links");
+    var search = nav.querySelector("form.nav-search");
+    var cta = nav.querySelector(".nav-cta");
+    if (!links) return;
+    var drawer = document.createElement("div");
+    drawer.className = "nav-drawer";
+    drawer.id = "nav-drawer";
+    if (cta) nav.insertBefore(drawer, cta);
+    else nav.appendChild(drawer);
+    drawer.appendChild(links);
+    if (search) drawer.appendChild(search);
+    var toggle = nav.querySelector(".nav-toggle");
+    if (toggle) {
+      toggle.setAttribute("aria-controls", "nav-drawer");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  }
+
   function enhanceNav(nav) {
     enhanceLogo(nav);
     var logo = nav.querySelector(".nav-logo");
@@ -682,6 +702,7 @@ function aboutMega() {
     links.appendChild(wrapMega(href("solutions/index.html"), "solutions", labels.solutions, solutionsMega()));
     links.appendChild(wrapMega(href("company/index.html"), "company", labels.company, aboutMega()));
     links.appendChild(wrapMega(href("support/download-center.html"), "resources", labels.resources || "Resources", resourcesMega()));
+    ensureNavDrawer(nav);
     bindMega(nav);
     markActive(nav);
     var qm = /(?:\?|&)mega=([a-z]+)/.exec(location.search || "");

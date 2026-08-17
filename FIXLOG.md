@@ -28,3 +28,6 @@ Design feedback pass after stakeholder-fix merge.
 - Region selector labels: **India**, then **Global (Export)** (was Export / Export (EN)).
 - Footer Support column: **Report Counterfeit** (chrome rebuild + static labels).
 - Header/footer logo tagline: remove CSS `text-transform: lowercase` so **Har haal mein** / **हर हाल में** / **Current and Beyond** render as authored.
+- Mobile nav (≤960px): bar keeps logo + hamburger + Contact us; Search and primary nav live inside the hamburger drawer.
+- Mobile footer: brand full-width, then 2-column link rows with larger tap spacing; legal wraps two-up.
+- Home personas: label/heading → **By persona** / **Start with who you are**; removed Join BCH + BCHive row.
