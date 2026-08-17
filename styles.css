@@ -133,27 +133,20 @@ p { color: var(--muted); max-width: 48em; }
   flex-shrink: 0;
   border: 1px solid var(--ink);
   background: var(--white);
+  color: var(--ink);
   padding: 0;
   -webkit-tap-highlight-color: transparent;
 }
-.nav-ai-btn .ask-mark {
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: var(--ink);
-  color: var(--white);
-  padding: 3px 5px;
-  line-height: 1;
+.nav-ai-btn .ask-ico {
+  display: block;
+  width: 18px;
+  height: 18px;
 }
 .nav-ai-btn:hover,
 .nav-ai-btn:focus-visible {
   background: var(--ink);
+  color: var(--white);
   outline: none;
-}
-.nav-ai-btn:hover .ask-mark,
-.nav-ai-btn:focus-visible .ask-mark {
-  background: var(--white);
-  color: var(--ink);
 }
 .nav-cta-drawer { display: none; }
 .nav-drawer {
@@ -915,10 +908,12 @@ a.card:hover { border-color: var(--ink); opacity: 1; }
   letter-spacing: 0.02em; min-width: 168px;
 }
 .ask-bch-btn:hover { opacity: 1; border-color: var(--ink); color: var(--ink); }
-.ask-bch-btn .ask-mark {
-  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
-  background: var(--ink); color: var(--white); padding: 2px 5px;
+.ask-bch-btn .ask-mark,
+.ask-bch-btn .ask-ico {
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--ink);
 }
+.ask-bch-btn .ask-ico { width: 16px; height: 16px; }
 .utility-bar { justify-content: space-between; }
 .utility-bar .util-left { display: flex; align-items: center; gap: 12px; margin-right: auto; }
 .ask-overlay {
@@ -1070,9 +1065,14 @@ a.card:hover { border-color: var(--ink); opacity: 1; }
   overflow: hidden;
 }
 .ask-bch-fab:hover { opacity: 1; }
-.ask-bch-fab .ask-mark {
-  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
-  background: var(--white); color: var(--ink); padding: 2px 5px;
+.ask-bch-fab .ask-ico {
+  display: block;
+  width: 16px;
+  height: 16px;
+  color: var(--white);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 .ask-bch-fab::after {
   content: ""; position: absolute; inset: 0;
@@ -2319,11 +2319,17 @@ html.loc-open, body.loc-open { overflow: hidden; }
 .nav-search.is-ai {
   display: flex; align-items: stretch;
 }
-.nav-search.is-ai .ask-mark {
+.nav-search.is-ai .ask-mark,
+.nav-search.is-ai .ask-mark-ico {
   position: absolute; left: 8px; top: 50%; transform: translateY(-50%);
-  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
-  background: var(--ink); color: var(--white); padding: 2px 5px;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  background: transparent; color: var(--ink);
   z-index: 1; pointer-events: none;
+}
+.nav-search.is-ai .ask-mark .ask-ico,
+.nav-search.is-ai .ask-mark-ico .ask-ico {
+  width: 16px; height: 16px; color: var(--ink);
 }
 .nav-search.is-ai input[type="search"] {
   padding-left: 38px;
