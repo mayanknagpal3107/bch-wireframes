@@ -31,3 +31,6 @@ Design feedback pass after stakeholder-fix merge.
 - Mobile nav (≤960px): bar keeps logo + hamburger + Contact us; Search and primary nav live inside the hamburger drawer.
 - Mobile footer: brand full-width, then 2-column link rows with larger tap spacing; legal wraps two-up.
 - Home personas: label/heading → **By persona** / **Start with who you are**; removed Join BCH + BCHive row.
+- Home products: four live-site-style type cards (Motor starters, Industrial products, Enclosures, Solutions), full-card tappable.
+- Mobile chrome: hide utility bar; bar = logo + AI search icon + hamburger; Contact us inside drawer (desktop unchanged).
+- Home: merge Sales/distribution + Scale into one **Global presence** section (partners, 500+ dealers, 60 years in 2025, rugged India-duty products).

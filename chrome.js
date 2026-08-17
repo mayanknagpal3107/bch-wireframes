@@ -666,19 +666,52 @@ function aboutMega() {
     var links = nav.querySelector(".nav-links");
     var search = nav.querySelector("form.nav-search");
     var cta = nav.querySelector(".nav-cta");
+    var toggle = nav.querySelector(".nav-toggle");
     if (!links) return;
     var drawer = document.createElement("div");
     drawer.className = "nav-drawer";
     drawer.id = "nav-drawer";
     if (cta) nav.insertBefore(drawer, cta);
+    else if (toggle && toggle.nextSibling) nav.insertBefore(drawer, toggle.nextSibling);
     else nav.appendChild(drawer);
     drawer.appendChild(links);
     if (search) drawer.appendChild(search);
-    var toggle = nav.querySelector(".nav-toggle");
+    if (cta && !drawer.querySelector(".nav-cta-drawer")) {
+      var ctaClone = cta.cloneNode(true);
+      ctaClone.classList.add("nav-cta-drawer");
+      ctaClone.removeAttribute("id");
+      drawer.appendChild(ctaClone);
+    }
     if (toggle) {
       toggle.setAttribute("aria-controls", "nav-drawer");
       toggle.setAttribute("aria-expanded", "false");
     }
+    ensureNavAiBtn(nav, toggle);
+  }
+
+  function ensureNavAiBtn(nav, toggle) {
+    if (!nav || nav.querySelector(".nav-ai-btn")) return;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "nav-ai-btn";
+    btn.setAttribute("aria-label", "Ask AI search");
+    btn.innerHTML = '<span class="ask-mark" aria-hidden="true">AI</span>';
+    if (toggle) nav.insertBefore(btn, toggle);
+    else nav.appendChild(btn);
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (typeof window.openAskBCH === "function") {
+        window.openAskBCH();
+        return;
+      }
+      var fab = document.getElementById("ask-bch-fab");
+      if (fab) {
+        fab.click();
+        return;
+      }
+      location.href = href("search.html");
+    });
   }
 
   function enhanceNav(nav) {
@@ -703,6 +736,11 @@ function aboutMega() {
     links.appendChild(wrapMega(href("company/index.html"), "company", labels.company, aboutMega()));
     links.appendChild(wrapMega(href("support/download-center.html"), "resources", labels.resources || "Resources", resourcesMega()));
     ensureNavDrawer(nav);
+    var drawerCta = nav.querySelector(".nav-cta-drawer");
+    if (drawerCta) {
+      drawerCta.setAttribute("href", href("contact/index.html"));
+      drawerCta.textContent = t().nav.contactUs || "Contact us";
+    }
     bindMega(nav);
     markActive(nav);
     var qm = /(?:\?|&)mega=([a-z]+)/.exec(location.search || "");
