@@ -317,7 +317,7 @@
       searchAria: "AI product search",
       searchBtn: "Ask",
       chip: "English",
-      footerLine: "Industrial switchgear since 1965. Select · Spec · Download · Enquire.",
+      footerLine: "Since 1965",
       download: "Download Center",
       appAgri: "Agriculture &amp; pump sets",
       appMotor: "Motor control &amp; protection",
@@ -365,7 +365,7 @@
       searchAria: "AI product search",
       searchBtn: "Ask",
       chip: "Global (Export)",
-      footerLine: "Industrial switchgear since 1965. India and export — exports@bchindia.com.",
+      footerLine: "Since 1965",
       download: "Download Center",
       appAgri: "Agriculture &amp; pump sets",
       appMotor: "Motor control &amp; protection",
@@ -413,7 +413,7 @@
       searchAria: "AI उत्पाद खोज",
       searchBtn: "पूछें",
       chip: "हिंदी दृश्य · wireframe",
-      footerLine: "1965 से औद्योगिक स्विचगियर। चयन · स्पेक · डाउनलोड · पूछताछ।",
+      footerLine: "1965 से",
       download: "डाउनलोड केंद्र",
       appAgri: "कृषि और पंप सेट",
       appMotor: "मोटर नियंत्रण और सुरक्षा",
@@ -461,7 +461,7 @@
       searchAria: "KI-Produktsuche",
       searchBtn: "Fragen",
       chip: "Deutsch · Struktur",
-      footerLine: "Industrie-Schaltgeräte seit 1965. Auswählen · Spezifizieren · Download · Anfragen.",
+      footerLine: "Seit 1965",
       download: "Download-Center",
       appAgri: "Landwirtschaft &amp; Pumpen",
       appMotor: "Motorsteuerung &amp; Schutz",
@@ -1318,15 +1318,14 @@ function aboutMega() {
       grid.innerHTML =
         brandBlock +
         '<div class="footer-col"><h5 data-en="Products">' + (i18.nav.products || "Products") + "</h5>" +
-        '<a href="' + href("products/all.html") + '">All products</a>' +
         '<a href="' + href("products/motor-starters.html") + '">Motor starters</a>' +
-        '<a href="' + href("products/power-control.html") + '">Power control</a>' +
-        '<a href="' + href("products/enclosures.html") + '">Enclosures</a>' +
-        '<a href="' + href("support/download-center.html") + '">Download Center</a>' +
-        '<a href="' + href("products/selector.html") + '">Product selector</a>' +
+        '<a href="' + href("products/motor-control.html") + '">Industrial products</a>' +
+        '<a href="' + href("products/enclosures.html") + '">Industrial enclosures</a>' +
+        '<a href="' + href("solutions/custom-panels.html") + '">Industrial solutions</a>' +
         "</div>" +
         '<div class="footer-col"><h5 data-en="Solutions">' + (i18.nav.solutions || "Solutions") + "</h5>" +
         '<a href="' + href("solutions/index.html") + '">Solutions hub</a>' +
+        '<a href="' + href("solutions/applications.html") + '">Applications</a>' +
         '<a href="' + href("solutions/custom-panels.html") + '">Custom panels</a>' +
         '<a href="' + href("solutions/industries.html") + '">Industries</a>' +
         '<a href="' + href("solutions/partners.html") + '">Partners</a>' +
