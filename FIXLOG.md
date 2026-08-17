@@ -36,3 +36,4 @@ Design feedback pass after stakeholder-fix merge.
 - Home: merge Sales/distribution + Scale into one **Global presence** section (partners, 500+ dealers, 60 years in 2025, rugged India-duty products).
 - Remove **Cutler-Hammer heritage** from footers and non-history copy; keep Cutler-Hammer only in About → History (and official PF-trust notice titles).
 - Home **Our values** cards: add line icons (match About values treatment).
+- Home case studies: three actionable proof cards (one number / one parameter — reliability, support, robustness) with distinct customer treatments.
