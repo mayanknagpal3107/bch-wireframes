@@ -125,7 +125,7 @@
         ? window.BCHChrome.askSearchIconHtml()
         : "") ||
       '<svg class="ask-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10" cy="10.5" r="5.25" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M14.2 14.7L19 19.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/><path d="M17.6 3.2l.85 2.15 2.15.85-2.15.85-.85 2.15-.85-2.15-2.15-.85 2.15-.85z" fill="currentColor"/><path d="M20.7 8.1l.45 1.15 1.15.45-1.15.45-.45 1.15-.45-1.15-1.15-.45 1.15-.45z" fill="currentColor"/></svg>';
-    askFab.innerHTML = askIco + " Ask BCH";
+    askFab.innerHTML = askIco + ' Ask BCH <em class="wf-addon-note" title="Add-on — will be done as part of version 2 or later.">v2</em>';
     document.body.appendChild(askFab);
 
     var ask = document.createElement("div");
@@ -134,7 +134,7 @@
     ask.innerHTML =
       '<div class="ask-modal" role="dialog" aria-label="Ask BCH">' +
       '<div class="ask-modal-head">' +
-      '<span class="section-label">Ask BCH · AI search <em class="wf-addon-note" title="Add-on — not in v1">v2</em></span>' +
+      '<span class="section-label">Ask BCH · AI search <em class="wf-addon-note" title="Add-on — will be done as part of version 2 or later.">v2</em></span>' +
       '<input id="ask-input" type="search" placeholder="Ask about a product, spec, dealer, document…" autocomplete="off" />' +
       "</div>" +
       '<div class="ask-suggest">' +

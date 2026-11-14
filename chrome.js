@@ -474,6 +474,10 @@
     }
   };
 
+  function wfAddonBadge() {
+    return ' <em class="wf-addon-note" title="Add-on — will be done as part of version 2 or later.">v2</em>';
+  }
+
   function ico(letters) {
     return '<span class="mega-ico" aria-hidden="true">' + letters + "</span>";
   }
@@ -1020,7 +1024,7 @@ function aboutMega() {
       '<div class="loc-head">' +
       '<h3 id="loc-panel-title">' +
       L.title +
-      ' <em class="wf-addon-note" title="Add-on — not in the first version">v2</em>' +
+      ' <em class="wf-addon-note" title="Add-on — will be done as part of version 2 or later.">v2</em>' +
       "</h3>" +
       '<button type="button" class="loc-close" aria-label="' +
       L.close +
@@ -1093,6 +1097,7 @@ function aboutMega() {
       emph("selector") +
       ">" +
       u.selector +
+      wfAddonBadge() +
       "</a>" +
       '<a href="' + href("support/find-a-dealer.html") + '"' +
       emph("find-dealer") +
@@ -1119,6 +1124,7 @@ function aboutMega() {
       triggerText +
       "</span>" +
       "</button>" +
+      wfAddonBadge() +
       "</div>";
 
     var overlay = ensureLocOverlay(L, loc);
@@ -1190,7 +1196,7 @@ function aboutMega() {
       if (!form.querySelector(".wf-addon-note")) {
         var note = document.createElement("span");
         note.className = "wf-addon-note";
-        note.title = "Add-on — not in v1";
+        note.title = "Add-on — will be done as part of version 2 or later.";
         note.textContent = "v2";
         form.appendChild(note);
       }
@@ -1403,6 +1409,9 @@ function aboutMega() {
     document.querySelectorAll(".footer-bottom").forEach(function (el, i) {
       if (i > 0) el.remove();
       else el.innerHTML = "<span>© BCH Electric Limited · Wireframe IA v3</span><span>Grayscale · BrandClef</span>";
+    });
+    document.querySelectorAll('.site-footer a[href*="selector.html"], .site-footer a[href*="verify-product"]').forEach(function (a) {
+      if (!a.querySelector(".wf-addon-note")) a.insertAdjacentHTML("beforeend", wfAddonBadge());
     });
   }
 
