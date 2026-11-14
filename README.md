@@ -30,25 +30,6 @@ If you connect it as **Pages** instead: framework None, empty build command, out
 
 Each push to `main` republishes. HTML is `no-cache` so reviewers see updates.
 
-## Private review access (password gate)
-
-The site is **not public**: `worker.js` enforces HTTP Basic Auth on every
-request (`run_worker_first = true` in `wrangler.toml`, so static assets are
-never served without the check). It **fails closed** — until the password is
-configured, everyone gets a 401.
-
-One-time setup after deploying:
-
-1. Cloudflare Dashboard → **Workers & Pages** → `bch-wireframes` →
-   **Settings** → **Variables and Secrets** → **Add** → type **Secret**,
-   name `REVIEW_PASSWORD`, value = the password to share with reviewers.
-   (Or from a terminal: `npx wrangler secret put REVIEW_PASSWORD`.)
-2. Redeploy (or push to `main`) so the secret is picked up.
-3. Reviewers open the site, type **any username** and the shared password.
-
-To remove the gate later, delete `main = "worker.js"` and
-`run_worker_first = true` from `wrangler.toml`.
-
 ## Local
 
 ```bash
