@@ -1187,6 +1187,12 @@ function aboutMega() {
         }
       }
       if (btn) btn.textContent = i18.searchBtn;
+      if (!form.querySelector(".wf-addon-note")) {
+        var note = document.createElement("span");
+        note.className = "wf-addon-note";
+        note.textContent = "(add-on — not in v1)";
+        form.appendChild(note);
+      }
     });
   }
 

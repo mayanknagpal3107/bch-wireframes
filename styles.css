@@ -125,7 +125,11 @@ p { color: var(--muted); max-width: 48em; }
 .nav-logo { font-size: 14px; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; display: flex; align-items: center; }
 .nav-logo-img { height: 38px; width: auto; display: block; }
 .footer-logo-img { height: 52px; width: auto; display: block; }
-.wf-addon-note { font-style: normal; font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 11px; color: var(--muted); }
+.wf-addon-note {
+  font-style: normal; font-weight: 500; text-transform: none; letter-spacing: 0.01em;
+  font-size: 11px; color: #ED1A3C; /* annotation red — add-on markers, not part of the grayscale UI */
+}
+.nav-search .wf-addon-note { font-size: 10px; margin-left: 8px; white-space: nowrap; align-self: center; }
 .nav-logo:hover { opacity: 1; }
 .nav-logo em { font-style: normal; font-weight: 300; color: var(--muted); margin-left: 5px; font-size: 11px; }
 .nav-links { display: flex; align-items: center; gap: 22px; }
