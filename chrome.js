@@ -176,13 +176,17 @@
 
   function brandTagline() {
     // Approved brand tagline — same in every region/language.
-    return "Making progress dependable.";
+    return "Making Progress Dependable.";
+  }
+
+  function brandTaglineHTML() {
+    // Lockup spec: tagline breaks "Making Progress" / "Dependable."
+    return "Making Progress<br>Dependable.";
   }
 
   function applyTaglines() {
-    var line = brandTagline();
     document.querySelectorAll(".nav-tagline, .footer-tagline").forEach(function (el) {
-      el.textContent = line;
+      el.innerHTML = brandTaglineHTML();
     });
   }
 
@@ -634,12 +638,12 @@ function aboutMega() {
       lockup.appendChild(logo);
       var tag = document.createElement("span");
       tag.className = "nav-tagline";
-      tag.textContent = brandTagline();
+      tag.innerHTML = brandTaglineHTML();
       lockup.appendChild(tag);
     } else if (!nav.querySelector(".nav-tagline")) {
       var tEl = document.createElement("span");
       tEl.className = "nav-tagline";
-      tEl.textContent = brandTagline();
+      tEl.innerHTML = brandTaglineHTML();
       nav.querySelector(".nav-lockup").appendChild(tEl);
     }
   }
@@ -1325,7 +1329,7 @@ function aboutMega() {
       if (!brand.parentNode.querySelector(".footer-tagline")) {
         var tag = document.createElement("div");
         tag.className = "footer-tagline";
-        tag.textContent = brandTagline();
+        tag.innerHTML = brandTaglineHTML();
         if (brand.nextSibling) brand.parentNode.insertBefore(tag, brand.nextSibling);
         else brand.parentNode.appendChild(tag);
       }
@@ -1899,7 +1903,37 @@ function aboutMega() {
     applyTaglines();
   }
 
+  function injectLoader() {
+    if (document.getElementById("bch-loader")) return;
+    var reduced = false;
+    try { reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    if (reduced) return;
+    var el = document.createElement("div");
+    el.id = "bch-loader";
+    el.setAttribute("aria-hidden", "true");
+    el.innerHTML =
+      '<div class="bch-loader-lockup">' +
+      '<img src="' + href("assets/bch-logo-bw.svg") + '" alt="" />' +
+      '<div class="bch-loader-bar"><i></i></div>' +
+      '<div class="bch-loader-tagline">Making Progress<br>Dependable.</div>' +
+      "</div>";
+    document.body.appendChild(el);
+    var MIN = 900;
+    var t0 = Date.now();
+    function hide() {
+      var wait = Math.max(0, MIN - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("is-done");
+        setTimeout(function () { el.remove(); }, 450);
+      }, wait);
+    }
+    if (document.readyState === "complete") hide();
+    else window.addEventListener("load", hide);
+    setTimeout(function () { if (el.parentNode) { el.classList.add("is-done"); setTimeout(function () { el.remove(); }, 450); } }, 4000);
+  }
+
   function init() {
+    injectLoader();
     var loc = persistLoc(getLoc());
     applyLoc(loc);
     enhanceAll(false);
