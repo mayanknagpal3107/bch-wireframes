@@ -1020,7 +1020,7 @@ function aboutMega() {
       '<div class="loc-head">' +
       '<h3 id="loc-panel-title">' +
       L.title +
-      ' <em class="wf-addon-note">(add-on — not in first version)</em>' +
+      ' <em class="wf-addon-note" title="Add-on — not in the first version">v2</em>' +
       "</h3>" +
       '<button type="button" class="loc-close" aria-label="' +
       L.close +
@@ -1190,7 +1190,8 @@ function aboutMega() {
       if (!form.querySelector(".wf-addon-note")) {
         var note = document.createElement("span");
         note.className = "wf-addon-note";
-        note.textContent = "(add-on — not in v1)";
+        note.title = "Add-on — not in v1";
+        note.textContent = "v2";
         form.appendChild(note);
       }
     });

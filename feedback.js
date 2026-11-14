@@ -134,7 +134,7 @@
     ask.innerHTML =
       '<div class="ask-modal" role="dialog" aria-label="Ask BCH">' +
       '<div class="ask-modal-head">' +
-      '<span class="section-label">Ask BCH · AI search <em class="wf-addon-note">(add-on — not in v1)</em></span>' +
+      '<span class="section-label">Ask BCH · AI search <em class="wf-addon-note" title="Add-on — not in v1">v2</em></span>' +
       '<input id="ask-input" type="search" placeholder="Ask about a product, spec, dealer, document…" autocomplete="off" />' +
       "</div>" +
       '<div class="ask-suggest">' +
