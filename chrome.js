@@ -1123,8 +1123,8 @@ function aboutMega() {
       '<span class="loc-label">' +
       triggerText +
       "</span>" +
-      "</button>" +
       wfAddonBadge() +
+      "</button>" +
       "</div>";
 
     var overlay = ensureLocOverlay(L, loc);
