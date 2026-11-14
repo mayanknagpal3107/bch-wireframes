@@ -175,10 +175,8 @@
   }
 
   function brandTagline() {
-    var loc = getLoc();
-    if (loc.country === "export") return "Current and Beyond";
-    if (loc.lang === "hi") return "हर हाल में";
-    return "Har haal mein";
+    // Approved brand tagline — same in every region/language.
+    return "Making progress dependable.";
   }
 
   function applyTaglines() {
@@ -623,6 +621,12 @@ function aboutMega() {
   function enhanceLogo(nav) {
     var logo = nav.querySelector(".nav-logo");
     if (!logo) return;
+    if (!logo.querySelector(".nav-logo-img")) {
+      logo.innerHTML =
+        '<img class="nav-logo-img" src="' +
+        href("assets/bch-logo-bw.svg") +
+        '" alt="BCH Electric" />';
+    }
     if (!nav.querySelector(".nav-lockup")) {
       var lockup = document.createElement("div");
       lockup.className = "nav-lockup";
@@ -1012,6 +1016,7 @@ function aboutMega() {
       '<div class="loc-head">' +
       '<h3 id="loc-panel-title">' +
       L.title +
+      ' <em class="wf-addon-note">(add-on — not in first version)</em>' +
       "</h3>" +
       '<button type="button" class="loc-close" aria-label="' +
       L.close +
@@ -1311,6 +1316,12 @@ function aboutMega() {
   function enhanceFooter() {
     var i18 = t();
     document.querySelectorAll(".footer-brand").forEach(function (brand) {
+      if (!brand.querySelector(".footer-logo-img")) {
+        brand.innerHTML =
+          '<img class="footer-logo-img" src="' +
+          href("assets/bch-logo-bw.svg") +
+          '" alt="BCH Electric" />';
+      }
       if (!brand.parentNode.querySelector(".footer-tagline")) {
         var tag = document.createElement("div");
         tag.className = "footer-tagline";

@@ -1,9 +1,16 @@
 name = "bch-wireframes"
 compatibility_date = "2026-08-15"
 
+# Password gate: every request goes through worker.js (Basic Auth against
+# the REVIEW_PASSWORD secret) before any static asset is served.
+main = "worker.js"
+
 # Workers static site (workers.dev). Do not set pages_build_output_dir —
 # that flag is for Pages projects and was mixed in incorrectly.
 [assets]
 directory = "./"
+binding = "ASSETS"
 not_found_handling = "404-page"
 html_handling = "auto-trailing-slash"
+# Required so the auth check runs before static assets are served directly.
+run_worker_first = true
