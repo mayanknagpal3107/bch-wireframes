@@ -53,16 +53,16 @@
   --util-h: 34px;
   --nav-h: 62px;
   --chrome: calc(var(--banner-h) + var(--util-h) + var(--nav-h));
-  --font: "Helvetica Neue", Helvetica, Arial, "Noto Sans Devanagari", system-ui, sans-serif;
-  --font-head: "Tosh A", "Helvetica Neue", Helvetica, Arial, "Noto Sans Devanagari", system-ui, sans-serif;
-  --font-sub: "Noto Sans", "Helvetica Neue", Helvetica, Arial, "Noto Sans Devanagari", system-ui, sans-serif;
+  --font: "Noto Sans", "Noto Sans Devanagari", Helvetica, Arial, system-ui, sans-serif;
+  --font-head: "Tosh A", "Noto Sans", "Noto Sans Devanagari", Helvetica, Arial, system-ui, sans-serif;
+  --font-sub: "Noto Sans", "Noto Sans Devanagari", Helvetica, Arial, system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: calc(var(--chrome) + 12px); }
 
 html[lang="hi"], html[data-lang="hi"] {
-  --font: "Noto Sans Devanagari", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font: "Noto Sans Devanagari", "Noto Sans", Helvetica, Arial, sans-serif;
 }
 body {
   font-family: var(--font);
@@ -3693,7 +3693,7 @@ html.bch-gate-lock body { overflow: hidden !important; }
 }
 .band-ink .quote-role { color: #999; }
 .quote-card blockquote[lang="hi"] {
-  font-family: "Noto Sans Devanagari", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans Devanagari", "Noto Sans", Helvetica, Arial, sans-serif;
   line-height: 1.55;
 }
 @media (max-width: 700px) {

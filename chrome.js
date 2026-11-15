@@ -52,7 +52,7 @@
     s.textContent = "html.bch-gate-lock,html.bch-gate-lock body{overflow:hidden!important}"
       + "#bch-desktop-gate{position:fixed;inset:0;z-index:10000;background:#111;color:#f4f4f4;"
       + "display:flex;align-items:center;justify-content:center;padding:28px 22px;"
-      + "font-family:Helvetica Neue,Helvetica,Arial,Noto Sans Devanagari,system-ui,sans-serif}"
+      + "font-family:Noto Sans,Noto Sans Devanagari,Helvetica,Arial,system-ui,sans-serif}"
       + "#bch-desktop-gate .gate-card{max-width:28rem;width:100%;text-align:left;border:1px solid #333;"
       + "background:#1a1a1a;padding:28px 24px}"
       + "#bch-desktop-gate .gate-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;"
